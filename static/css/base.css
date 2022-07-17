@@ -19,6 +19,11 @@ body {
     color: green;
 }
 
+.nav-link {
+    color: green;
+    text-decoration: none;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
