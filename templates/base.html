@@ -16,6 +16,7 @@
     {% block corecss %}
       <link rel="stylesheet" href="{% static 'css/base.css' %}">
       <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300&family=Oswald:wght@300&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@800&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     {% endblock %}
 
@@ -38,7 +39,7 @@
     <header class="container-fluid fixed-top header">
       <div id="topnav" class="row bg-wjite pt-lg-2 d-none d-lg-flex">
         <div class="col-12 col-lg-4 my-auto py1 py-lg-0 text-center text-lg-left">
-          <h2 class="logo-font my-0"><strong>A&H</strong> Canvas</h2>
+          <h2 class="logo-font my-0"><strong class="strong-text">A&H</strong> Canvas</h2>
         </div>
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
           <form action="" method="GET">
@@ -102,8 +103,8 @@
           {% include 'includes/main-nav.html' %}
         </nav>
       </div>
-      <div id="delivery-banner" class="row text-center">
-        <div class="col bg-black">
+      <div id="special-banner" class="row text-center">
+        <div class="col text-white">
             <h4 class="logo-font my-1">Buy <strong>One</strong> 3 Split Canvas Get <strong>25%</strong> Off Any Single Canvas</h4>                
         </div>            
       </div>

@@ -15,6 +15,20 @@ body {
     color: green;
 }
 
+.strong-text {
+    font-family: 'Kanit', sans-serif;
+}
+
+#special-banner {
+    background: green;
+}
+
+.title {
+    margin-top: 200px;
+    font-family: 'Kanit', sans-serif;
+    text-shadow: 2px 0 0 #000, 0 -1px 0 #000, 0 2px 0 #000, -1px 0 0 #000;
+}
+
 .bg-black {
     background: black;
 }
