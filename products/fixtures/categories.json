@@ -1,0 +1,50 @@
+[
+  {
+    "pk": 1,
+    "model": "products.category",
+    "fields": {
+      "name": "mountain",
+      "friendly_name": "Mountian"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.category",
+    "fields": {
+      "name": "woodland",
+      "friendly_name": "Woodland"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.category",
+    "fields":{
+      "name": "plant ",
+      "friendly_name": "Plants"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.category",
+    "fields": {
+      "name": "animal",
+      "friendly_name": "Animals"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "products.category",
+    "fields":{
+      "name": "places",
+      "friendly_name": "Places"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "products.category",
+    "fields": {
+      "name": "beachfront",
+      "friendly_name": "Beachfront"
+    }
+  }
+]
