@@ -229,7 +229,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10016",
-      "name": "mirror-lake",
+      "name": "Mirror Lake",
       "description": "On the trek up to the Lake Agnes Tea house, you stumble across this beautiful place called Mirror Lake. It is remote and quiet apart from the other hikers who make the pit stop to have a look. It is a breath takingly beautiful stop to catch your breath and give your legs a break on your way up. ",
       "size": "Standard",
       "category": 2,
@@ -244,7 +244,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10017",
-      "name": "chipmonk",
+      "name": "Chipmonk",
       "description": "The chipmunks are curious, they are used to the human company and are not phased by being close by. This lovely little chipmunk gracefully starring out into the distance in its most natural place.",
       "size": "Standard",
       "category": 4,
@@ -259,7 +259,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10018",
-      "name": "chipmnok2",
+      "name": "Chipmnok2",
       "description": "The chipmunks are curious, they are used to the human company and are not phased by being close by. A Lovely moment in nature where the chipmunk didn\u2019t mind being in the presence of us taking this photograph. ",
       "size": "Standard",
       "category": 4,
@@ -274,7 +274,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10019",
-      "name": "mountain-trees",
+      "name": "Mountain Trees",
       "description": "Cloudy mountain top with woodland in the foreground ",
       "size": "Standard",
       "category": 1,
@@ -289,7 +289,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10020",
-      "name": "chipmonk-rock",
+      "name": "Chipmonk Rock",
       "description": "They place themselves everywhere looking for food, the chipmunk appeared to be happy with us being around, very patiently sitting and observing the movements we made. ",
       "size": "Standard",
       "category": 4,
@@ -304,7 +304,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10021",
-      "name": "three-mushrooms",
+      "name": "Three Mushrooms",
       "description": "Life has its variations of how it survives. Some mushrooms, feed off rotting trees, the digest this, turn the dead tree into life. Mushrooms are often missed, overlooked and misunderstood. This image on the rotting wood, shows how their part in this world is so important in the ecosystems. A shallow depth of field on F2.8 aperture with a macro lens captures the intricate life balance of this mushroom. ",
       "size": "Standard",
       "category": 3,
@@ -319,7 +319,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10022",
-      "name": "mushroom",
+      "name": "Mushroom",
       "description": "The mushroom lifespan. This is showing the mushroom coming towards the end of its life opening its cap and becoming an elder mushroom. The focus point is everything has a life span which is shown in different ways. F2.8 aperture used to ensure this was the main focus for the viewer. Become one with the small parts of nature.",
       "size": "Standard",
       "category": 3,
@@ -334,7 +334,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10023",
-      "name": "lake-louise-panorama",
+      "name": "Lake Louise Panorama",
       "description": "Taken from the side view, rather than the famous view at the front. The panorama shows the whole view of Lake Louise from a different angle not many others see.",
       "size": "Panarma",
       "category": 1,
@@ -349,7 +349,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10024",
-      "name": "emerald-lake",
+      "name": "Emerald Lake",
       "description": "Emerald Lake, Park of Yoho National Park in British Columbia. This national park in within the heart of the Canadian Rockies. Emerald Lake is an exquisite view. The turquoise lake makes it as beautiful as Lake Louise. Surrounded by a beautiful walk taking in all the views of this wonderful land mark. ",
       "size": "Standard",
       "category": 1,
@@ -364,7 +364,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10025",
-      "name": "river-trees",
+      "name": "River Trees",
       "description": "Shot with an aperture of F32, this was shot on the ice fields parkway drive from Lake louise to Jasper, Canada. This beautiful river flows within the evergreen trees, the mountain range in the background where the river flows from and expressing the difficult, changeable climate within the Canadian Rockies. ",
       "size": "Standard",
       "category": 2,
@@ -379,7 +379,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10026",
-      "name": "hillside-emerald-lake",
+      "name": "Hillside Emerald Lake",
       "description": "An angled shot of Emerald Lake. After a drive of small, twisty roads, this magnificent view appeared. This perfect imagine demonstrates how naturally blue the water is. The white snow filled clouds have no reflection onto the water to create this vibrate blue water. The F32 aperture keeps everything in focus expressing the true beauty of this naturally beautiful landscape.",
       "size": "Standard",
       "category": 1,
@@ -394,7 +394,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10027",
-      "name": "emerald-lake-panorama",
+      "name": "Emerald Lake Panorama",
       "description": "After a drive of small, twisty roads, this magnificent view appeared. This perfect imagine demonstrates how naturally blue the water is. The white snow filled clouds have no reflection onto the water to create this vibrate blue water. The panorama captures the whole scene for the viewer to see this whole scene in one. ",
       "size": "Panarma",
       "category": 1,
@@ -409,7 +409,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10028",
-      "name": "snow-pine",
+      "name": "Snow Pine",
       "description": "The drastic changes in Canadian weather, this image was shot during a freak unexpected snow storm across Alberta. The trees with the snow provide an image of the Canadian Rockies that people expect it to look like. ",
       "size": "Standard",
       "category": 2,
@@ -424,7 +424,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10029",
-      "name": "snowy-mountain-river",
+      "name": "Snowy Mountain River",
       "description": "The ice fields parkway, Canada, is known to be one of the most beautiful drives in the world. During a freak snowstorm in September. The beautiful mountain ranges that are drove past, the lakes the flow below them bordered by the wonderful evergreen trees that are native to Canada. This image shot on a F32 aperture, captures this wonderful rare moment for this time of year. ",
       "size": "Standard",
       "category": 1,
@@ -439,7 +439,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10030",
-      "name": "snowy-mountain",
+      "name": "Snowy Mountain",
       "description": "Snow covered trees, floor and mountains. This image would have had a different effect if shot on F2.8 aperture. Shooting with a F32, incorporates the beauty of nature in the snow. The viewer can envision the cold air on the skin, breathing it in, embracing the beautiful imagery that snow brings and how it can completely change a landscape view. ",
       "size": "Standard",
       "category": 1,
@@ -454,7 +454,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10031",
-      "name": "waterfall-snowy-mountain",
+      "name": "Waterfall Snowy Mountain",
       "description": "Shot on an F32 aperture, everything being in focus. The minuscule splashes of colour which can be seen display how much show has truly fell in this moment. No green visible, only white. An ideal vison of what a true winter wonderland looks like. The ice blue glacier water flowing into white traveling down the waterfall. The image almost creating the noise of crashing water, hitting the rocks down the waterfall. ",
       "size": "Standard",
       "category": 1,
@@ -469,7 +469,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10032",
-      "name": "snowy-pines",
+      "name": "Snowy Pines",
       "description": "Using an F2.8 aperture, creating a little depth of field. The contrast of the dark green to white snow expresses a wonderful scene of winter. It gives the image depth of colour, layers and texture. Each individual pine needle can be seen, each colour change visible. Can almost smell the pine.",
       "size": "Standard",
       "category": 2,
@@ -484,7 +484,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10033",
-      "name": "Lakeside-mountain",
+      "name": "Lakeside Mountain",
       "description": "This stunning mountain range in the background, collecting snow in such wonderful formations, different shades of colour can be seen within the white on the mountain tops creating depth and beauty. The rock in the foreground gives perspective of how magnificently large this mountain range truly is. ",
       "size": "Standard",
       "category": 1,
@@ -499,7 +499,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10034",
-      "name": "distant-mountains",
+      "name": "Distant Mountains",
       "description": "Walking along a path, slowly turning the corner and this beautiful distant mountain range comes into shot. It\u2019s peaceful, beautiful and encapsulating. When viewing this, it brings a feeling of how small humans truly are. These mountains will be millions of years old and you enjoy their beauty for 5 minutes. An image of this triggers these thoughts each time it is viewed. Embracing and remembering that feeling for a life time. ",
       "size": "Standard",
       "category": 1,
@@ -514,7 +514,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10035",
-      "name": "mountain-lake",
+      "name": "Mountain Lake",
       "description": "A beautiful pit stop on a long journey through the icefields parkway in Canada. Shot using F32 aperture to have everything in focus from the tiny rocks in the foreground to the giant mountain range in the back ground. The trees, becoming further and further away expressed how large and far away this mountain range is. Are these tiny rocks park of that mountain range? The tranquillity and stillness of the lake brings peace.",
       "size": "Standard",
       "category": 1,
@@ -529,7 +529,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10036",
-      "name": "curving-lake-mountains",
+      "name": "Curving Lake Mountains",
       "description": "A curving river, flowing from the mountain ranges surrounded by evergreen trees. During a freak now storm, it went as quick as it came. Japer, Canada, the snow was nearly melted, only remaining mostly on the mountain tops. Clouds still looming across the mountain ranges, expressing how high they are. ",
       "size": "Standard",
       "category": 1,
@@ -544,7 +544,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10037",
-      "name": "log-lake-mountains",
+      "name": "Log Lake Mountains",
       "description": "A wonderful scene of nature and how it adapts. Driftwood, from a damaged tree washing up on the side of the lake with the mountain and trees in the background. The snow being on the mountain tops, the clouds draping across, yet clear and no snow on the ground or trees; Demonstrates the altitude and how things can be so different when so close by.",
       "size": "Standard",
       "category": 1,
@@ -559,7 +559,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10038",
-      "name": "panorama-jasper",
+      "name": "Panorama Jasper",
       "description": "River and woodland panorama shot in Jasper, Alberta. The positioning of the sun creates a beautiful silhouette of the trees overshadowing the river running past. A sight view of a mountain range in background to indicate the river flowing from them into low lands creating life for all.",
       "size": "Panarma",
       "category": 2,
@@ -574,7 +574,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10039",
-      "name": "trees-river",
+      "name": "Trees River",
       "description": "Shot on F32, this close up pine branches with river rapids in the background yet all being in focus, creating depth to the image; Encapsulating depth of colour from the beautiful turquoise water, contrasting with the variations of green within the woodland. The river rapids flowing fast, white water, the sounds of peace and nature being embraced within the image. Shot somewhere with the grand area of Yoho National Park, Canada.",
       "size": "Standard",
       "category": 2,
@@ -589,7 +589,7 @@
     "model": "products.product",
     "fields": {
       "sku": "AHP10040",
-      "name": "pine-river-rapids",
+      "name": "Pine River Rapids",
       "description": "Shot on F32, this close up pine branches with river rapids in the background yet all being in focus, creating depth to the image; Encapsulating depth of colour from the beautiful turquoise water, contrasting with the variations of green within the woodland. The river rapids flowing fast, white water, the sounds of peace and nature being embraced within the image. Shot somewhere with the grand area of Yoho National Park, Canada.",
       "size": "Standard",
       "category": 2,
