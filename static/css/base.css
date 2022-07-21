@@ -15,6 +15,10 @@ body {
     color: green;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 .strong-text {
     font-family: 'Kanit', sans-serif;
     color: green;
@@ -25,7 +29,6 @@ body {
 }
 
 .title {
-    margin-top: 200px;
     font-family: 'Kanit', sans-serif;
     text-shadow: 2px 0 0 #000, 0 -1px 0 #000, 0 2px 0 #000, -1px 0 0 #000;
 }
@@ -132,5 +135,16 @@ body {
 
     .header-container {
         padding-top: 164px;
+    }
+}
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
     }
 }
