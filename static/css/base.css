@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('/media/Shop-Images/emerald-lake-panorama.jpg') no-repeat center center fixed;
+    background: url('/media/emerald-lake-panorama.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
@@ -17,6 +17,7 @@ body {
 
 .strong-text {
     font-family: 'Kanit', sans-serif;
+    color: green;
 }
 
 #special-banner {
@@ -87,6 +88,16 @@ body {
 
 .border-black {
     border: 1px solid black !important;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
 }
 
 /* -------------------------------- Navbar toggler */
