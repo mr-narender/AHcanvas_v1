@@ -103,6 +103,11 @@ a:hover {
     z-index: -1;
 }
 
+a.category-badge > span.badge:hover {
+    background: green !important;
+    color: #fff !important;
+}
+
 /* -------------------------------- Navbar toggler */
 
 .navbar-toggler {

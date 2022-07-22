@@ -22,29 +22,26 @@ def all_products(request):
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
-
+            if sortkey == 'category':
+                sortkey = 'category__name'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
 
-
         if 'colour' in request.GET:
             colour = request.GET['colour'].split(',')
             products = products.filter(colour__in=colour)
-
 
         if 'size' in request.GET:
             size = request.GET['size'].split(',')
             products = products.filter(size__in=size)
 
-
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
-
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -61,8 +58,8 @@ def all_products(request):
         'products': products,
         'search_term': query,
         'current_categories': categories,
-        'size': size,
-        'colour': colour,
+        'current_size': size,
+        'current_colour': colour,
         'current_sorting': current_sorting,
     }
 
