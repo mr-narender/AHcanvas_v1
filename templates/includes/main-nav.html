@@ -18,13 +18,13 @@
                 Categories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="category-link">
-                <a href="" class="dropdown-item">Mountain</a>
-                <a href="" class="dropdown-item">Woodland</a>
-                <a href="" class="dropdown-item">Plant</a>
-                <a href="" class="dropdown-item ">Animal</a>
-                <a href="" class="dropdown-item ">Places</a>
-                <a href="" class="dropdown-item ">Beachfront</a>
-                <a href="" class="dropdown-item">All Categories</a>
+                <a href="{% url 'products' %}?category=mountain" class="dropdown-item">Mountain</a>
+                <a href="{% url 'products' %}?category=woodland" class="dropdown-item">Woodland</a>
+                <a href="{% url 'products' %}?category=plant " class="dropdown-item">Plant</a>
+                <a href="{% url 'products' %}?category=animal" class="dropdown-item ">Animal</a>
+                <a href="{% url 'products' %}?category=places" class="dropdown-item ">Places</a>
+                <a href="{% url 'products' %}?category=beachfront" class="dropdown-item ">Beachfront</a>
+                <a href="{% url 'products' %}?category=mountain,woodland,plant ,animal,places,beachfront" class="dropdown-item">All Categories</a>
             </div>
         </li>
 
@@ -33,15 +33,15 @@
                 Colour
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="colour-link">
-                <a href="" class="dropdown-item">Green</a>
-                <a href="" class="dropdown-item">Blue</a>
-                <a href="" class="dropdown-item ">Yellow</a>
-                <a href="" class="dropdown-item ">White</a>
-                <a href="" class="dropdown-item ">Grey</a>
-                <a href="" class="dropdown-item ">Brown</a>
-                <a href="" class="dropdown-item ">Black</a>
-                <a href="" class="dropdown-item ">Red</a>
-                <a href="" class="dropdown-item">All Colours</a>
+                <a href="{% url 'products' %}?colour=Green" class="dropdown-item">Green</a>
+                <a href="{% url 'products' %}?colour=Blue" class="dropdown-item">Blue</a>
+                <a href="{% url 'products' %}?colour=Yellow" class="dropdown-item ">Yellow</a>
+                <a href="{% url 'products' %}?colour=White" class="dropdown-item ">White</a>
+                <a href="{% url 'products' %}?colour=Grey" class="dropdown-item ">Grey</a>
+                <a href="{% url 'products' %}?colour=Brown" class="dropdown-item ">Brown</a>
+                <a href="{% url 'products' %}?colour=Black" class="dropdown-item ">Black</a>
+                <a href="{% url 'products' %}?colour=Red" class="dropdown-item ">Red</a>
+                <a href="{% url 'products' %}?colour=Green,Blue,Yellow,White,Grey,Brown,Black,Red" class="dropdown-item">All Colours</a>
             </div>
         </li>
 
@@ -50,9 +50,9 @@
                 Size
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">Standard</a>
-                <a href="" class="dropdown-item">Panorama</a>
-                <a href="" class="dropdown-item">All Sizes</a>
+                <a href="{% url 'products' %}?size=Standard" class="dropdown-item">Standard</a>
+                <a href="{% url 'products' %}?size=Panorama" class="dropdown-item">Panorama</a>
+                <a href="{% url 'products' %}?size=Standard,Panorama" class="dropdown-item">All Sizes</a>
             </div>
         </li>
     </ul>
