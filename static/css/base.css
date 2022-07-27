@@ -64,25 +64,29 @@ a:hover {
     width: fit-content;
 }
 
-.shop-now-button {
+.shop-button {
     background: green;
     color: white;
     min-width: 260px;
 }
 
-.btn-black {
-    background: black;
+.shop-button:hover,
+.shop-button:active,
+.shop-button:focus {
+    background: #222;
     color: white;
 }
 
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: #222;
+.btn-grn {
+    background: green;
     color: white;
+}
+
+.btn-grn:hover,
+.btn-grn:active,
+.btn-grn:focus {
+    background: white;
+    color: green;
 }
 
 .text-black {
