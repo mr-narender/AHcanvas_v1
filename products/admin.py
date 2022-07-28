@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category
+from .models import Product, Category, Option
 
 # Register your models here.
 
@@ -11,7 +11,6 @@ class ProductAdmin(admin.ModelAdmin):
         'category',
         'size',
         'colour',
-
     )
 
     ordering = ('sku',)
@@ -19,3 +18,4 @@ class ProductAdmin(admin.ModelAdmin):
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category)
+admin.site.register(Option)

@@ -31,10 +31,10 @@ class Product(models.Model):
         return self.name
 
 
-class Options(models.Model):
-    product = models.ForeignKey('Product', on_delete=models.SET_NULL, null=True, blank=True)
-    option = models.BooleanField(default=False, null=True, blank=True)
+class Option(models.Model):
+    name = models.CharField(max_length=254)
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return self.name

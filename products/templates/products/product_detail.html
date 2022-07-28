@@ -54,7 +54,40 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <div class="col-12">
+                                {% if product.size == 'standard' %}
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a href="">
+                                                <img src="{ MEDIA_URL }rectangle.jpg" alt="rectangle-canvas">
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="">
+                                                <img src="{ MEDIA_URL }3_panel.jpg" alt="3-panel-canvas">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                {% else %}
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a href="">
+                                                <img src="{ MEDIA_URL }panoramic.jpg" alt="panormaic-canvas">
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="">
+                                                <img src="{ MEDIA_URL }3_panel.jpg" alt="3-panel-canvas">
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="">
+                                                <img src="{ MEDIA_URL }5_panel.jpg" alt="5-panel-canvas">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                {% endif %}
+                            </div>
                             <div class="col-12">
                                 <a href="{% url 'products' %}" class="btn-grn btn-outline-black rounded-0 mt-5 mr-3">
                                     <span class="icon">
