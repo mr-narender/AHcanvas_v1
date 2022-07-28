@@ -29,3 +29,12 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Options(models.Model):
+    product = models.ForeignKey('Product', on_delete=models.SET_NULL, null=True, blank=True)
+    option = models.BooleanField(default=False, null=True, blank=True)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+
+    def __str__(self):
+        return self.name
