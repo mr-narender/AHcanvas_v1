@@ -79,7 +79,7 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
-def buying_options(request, product_id):
+def buying_options(request):
     """ A view to show the buying options of a product """
 
     options = Option.objects.all()
