@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
-from . models import Product, Category, Option
+from . models import Product, Category
 
 
 def all_products(request):
@@ -74,18 +74,6 @@ def product_detail(request, product_id):
 
     context = {
         'product': product,
-    }
-
-    return render(request, 'products/product_detail.html', context)
-
-
-def buying_options(request):
-    """ A view to show the buying options of a product """
-
-    options = Option.objects.all()
-
-    context = {
-        'options': options,
     }
 
     return render(request, 'products/product_detail.html', context)

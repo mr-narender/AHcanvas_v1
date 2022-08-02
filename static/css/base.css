@@ -15,6 +15,15 @@ body {
     color: green;
 }
 
+a[href] {
+    color: green;
+}
+
+a[href]:hover {
+    text-decoration: none;
+    color: green;
+}
+
 a:hover {
     text-decoration: none;
 }
@@ -122,6 +131,12 @@ a.category-badge > span.badge:hover {
 
 .btt-link {
     cursor: pointer;
+}
+/* -------------------------------- Pagination */
+
+.pagination ul li {
+    background: green;
+    color: white;
 }
 
 /* -------------------------------- Navbar toggler */
