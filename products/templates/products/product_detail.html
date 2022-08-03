@@ -54,33 +54,6 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <p class="mt-3"><strong>Buying Options:</strong></p>
-                                {% if product.size == 'Standard' %}
-                                    <input type="radio" name="buying-option" id="rectangle-canvas" value="rectangle">
-                                    <label for="rectangle">
-                                        <img src="{{ MEDIA_URL }}rectangle_PS0tYjo.jpg" alt="rectangle-canvas">
-                                    </label>
-                                    <input type="radio" name="buying-option" id="3-panel-canvas" value="3-panel">
-                                    <label for="3-panel">
-                                        <img src="{{ MEDIA_URL }}3_panel.jpg" alt="3-panel-canvas">
-                                    </label>
-                                {% else %}
-                                    <input type="radio" name="buying-option" id="panoramic" value="panoramic">
-                                    <label for="panoramic">
-                                        <img src="{ MEDIA_URL }panoramic.jpg" alt="panormaic-canvas">
-                                    </label>
-                                    <input type="radio" name="buying-option" id="3-panel-canvas" value="3-panel">
-                                    <label for="3-panel">
-                                        <img src="{ MEDIA_URL }3_panel.jpg" alt="3-panel-canvas">
-                                    </label>
-                                    <input type="radio" name="buying-option" id="5-panel-canvas" value="5-panel">
-                                    <label for="5-panel">
-                                        <img src="{ MEDIA_URL }5_panel.jpg" alt="5-panel-canvas">
-                                    </label>
-                                {% endif %}
-                                <p class="mt-3">Price: £{{ options.price }}</p>
-                            </div>
-                            <div class="col-12">
                                 <a href="{% url 'products' %}" class="btn-grn btn-outline-black rounded-0 mt-5 mr-3">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
