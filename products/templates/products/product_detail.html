@@ -54,6 +54,38 @@
                                 </div>
                             </div>
                             <div class="col-12">
+                                <p class="mt-3"><strong>Buying Options:</strong></p>
+                                {% if product.size == 'Standard' %}
+                                    <input type="radio" name="standard-types" id="standard">
+                                    <label for="standard">
+                                        {{ Product_type.standard }}
+                                        <img src="{{ product_type.image.url }}" alt="">
+                                    </label>
+                                    <input type="radio" name="standard-types" id="3_panel">
+                                    <label for="3_panel">
+                                        {{ product_type.3panel }}
+                                        <img src="{{ product_type.image.url }}" alt="">
+                                    </label>
+                                {% else %}
+                                    <input type="radio" name="panoramic-types" id="panormaic">
+                                    <label for="3_panel">
+                                        {{ product_type.panormaic }}
+                                        <img src="{{ product_type.image.url }}" alt="">
+                                    </label>
+                                    <input type="radio" name="panoramic-types" id="3_panel">
+                                    <label for="3_panel">
+                                        {{ product_type.3panel }}
+                                        <img src="{{ product_type.image.url }}" alt="">
+                                    </label>
+                                    <input type="radio" name="panoramic-types" id="5_panel">
+                                    <label for="5_panel">
+                                        {{ product_type.5panel }}
+                                        <img src="{{ product_type.image.url }}" alt="">
+                                    </label>
+                                {% endif %}
+                                <p class="mt-3"><strong>Price: £{{ product_type.product_price }}</strong></p>
+                            </div>
+                            <div class="col-12">
                                 <a href="{% url 'products' %}" class="btn-grn btn-outline-black rounded-0 mt-5 mr-3">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
