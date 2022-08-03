@@ -16,7 +16,19 @@ class ProductAdmin(admin.ModelAdmin):
     ordering = ('sku',)
 
 
+class ProductPriceAdmin(admin.ModelAdmin):
+    list_display = (
+        'product_price',
+    )
+
+
+class ProductTypeAdmin(admin.ModelAdmin):
+    list_display = (
+        'product_type',
+    )
+
+
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category)
-admin.site.register(ProductType)
-admin.site.register(ProductPrice)
+admin.site.register(ProductType, ProductTypeAdmin)
+admin.site.register(ProductPrice, ProductPriceAdmin)
