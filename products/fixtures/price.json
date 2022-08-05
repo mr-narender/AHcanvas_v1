@@ -1,0 +1,30 @@
+[
+  {
+    "pk": 1,
+    "model": "products.productprice",
+    "fields": {
+      "product_price": 100
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.productprice",
+    "fields": {
+      "product_price": 200
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.productprice",
+    "fields": {
+      "product_price": 300
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.productprice",
+    "fields": {
+      "product_price": 400
+    }
+  }
+]

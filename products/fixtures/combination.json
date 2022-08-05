@@ -1,0 +1,62 @@
+[
+  {
+    "pk": 1,
+    "model": "products.combination",
+    "fields": {
+      "option": "1",
+      "category": "1",
+      "sku": "AHP10001",
+      "name": "rocky-woodland-stream",
+      "size": "Standard",
+      "description": "A calming scene of a rocky stream running through a small desolate wood land in Maine, USA. This was shot with a slightly slower shutter speed to capture the movement of the water. To encapsulate the viewer of being sat there by the stream, being able to hear the water; Envisioning being sat peacefully by the quiet stream.",
+      "rating": 4,
+      "colour": "Brown",
+      "image": "rocky-woodland-stream.jpg"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.combination",
+    "fields": {
+      "option": "2",
+      "category": "1",
+      "sku": "AHP10001",
+      "name": "rocky-woodland-stream",
+      "size": "Standard",
+      "description": "A calming scene of a rocky stream running through a small desolate wood land in Maine, USA. This was shot with a slightly slower shutter speed to capture the movement of the water. To encapsulate the viewer of being sat there by the stream, being able to hear the water; Envisioning being sat peacefully by the quiet stream.",
+      "rating": 4,
+      "colour": "Brown",
+      "image": "rocky-woodland-stream.jpg"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.combination",
+    "fields": {
+      "option": "3",
+      "category": "1",
+      "sku": "AHP10001",
+      "name": "rocky-woodland-stream",
+      "size": "Standard",
+      "description": "A calming scene of a rocky stream running through a small desolate wood land in Maine, USA. This was shot with a slightly slower shutter speed to capture the movement of the water. To encapsulate the viewer of being sat there by the stream, being able to hear the water; Envisioning being sat peacefully by the quiet stream.",
+      "rating": 4,
+      "colour": "Brown",
+      "image": "rocky-woodland-stream.jpg"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.combination",
+    "fields": {
+      "option": "4",
+      "category": "1",
+      "sku": "AHP10001",
+      "name": "rocky-woodland-stream",
+      "size": "Standard",
+      "description": "A calming scene of a rocky stream running through a small desolate wood land in Maine, USA. This was shot with a slightly slower shutter speed to capture the movement of the water. To encapsulate the viewer of being sat there by the stream, being able to hear the water; Envisioning being sat peacefully by the quiet stream.",
+      "rating": 4,
+      "colour": "Brown",
+      "image": "rocky-woodland-stream.jpg"
+    }
+  }
+]
