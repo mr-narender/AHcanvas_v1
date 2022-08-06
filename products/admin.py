@@ -24,7 +24,6 @@ class CombinationAdmin(admin.ModelAdmin):
         "description",
         "rating",
         "colour",
-        "image",
     )
 
     ordering = ("sku",)

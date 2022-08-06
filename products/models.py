@@ -53,6 +53,7 @@ class Combination(models.Model):
     description = models.TextField()
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     colour = models.CharField(max_length=254)
+    image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -60,6 +61,5 @@ class Combination(models.Model):
 
 class Product(models.Model):
     sku = models.CharField(
-        max_length=254, null=False, blank=False, default=""
-    )
+        max_length=254, null=False, blank=False)
     image = models.ImageField(null=True, blank=True)
