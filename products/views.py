@@ -71,7 +71,7 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
-    product_type = ProductType.objects.all()
+    product_type = ProductType.objects.select_related('product').all()
     product_price = ProductPrice.objects.all()
 
     context = {

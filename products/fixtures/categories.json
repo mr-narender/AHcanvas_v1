@@ -19,7 +19,7 @@
     "pk": 3,
     "model": "products.category",
     "fields":{
-      "name": "plant ",
+      "name": "plant",
       "friendly_name": "Plants"
     }
   },

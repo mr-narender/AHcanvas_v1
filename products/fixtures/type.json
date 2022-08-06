@@ -1,0 +1,38 @@
+[
+    {
+      "pk": 1,
+      "model": "products.producttype",
+      "fields": {
+        "product_type": "STANDARD",
+        "product_price": "1",
+        "type_image": "rectangle.jpg"
+      }
+    },
+    {
+      "pk": 2,
+      "model": "products.producttype",
+      "fields": {
+        "product_type": "PANORAMIC",
+        "product_price": "2",
+        "type_image": "panoramic.jpg"
+      }
+    },
+    {
+      "pk": 3,
+      "model": "products.producttype",
+      "fields": {
+        "product_type": "3PANEL",
+        "product_price": "3",
+        "type_image": "3_panel.jpg"
+      }
+    },
+    {
+      "pk": 4,
+      "model": "products.producttype",
+      "fields": {
+        "product_type": "5PANEL",
+        "product_price": "4",
+        "type_image": "5_panel.jpg"
+      }
+    }
+  ]
