@@ -64,13 +64,13 @@
                                 </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
-                                    <h5 class="mb-0 strong-text">{{ product.name }}</h5>
+                                    <h5 class="mb-0 strong-text">{{ combination.name }}</h5>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">From £{{ product.price }}</p>
-                                            {% if product.category %}
+                                            <p class="lead mb-0 text-left font-weight-bold">From £34.00</p>
+                                            {% if combination.category %}
                                                 <p class="small mt-1 mb-0">
                                                     <a href="{% url 'products' %}?category={{ product.catergory.name }}" class="text-muted">
                                                         <i class="fa-solid fa-camera"></i> {{ product.category.friendly_name }}

@@ -3,66 +3,20 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from django.shortcuts import get_object_or_404, redirect, render, reverse
 
-from products.models import Category, Product, ProductPrice, ProductType
+from products.models import Category, Product, ProductPrice, ProductType, Combination
+from products.utils import paginateProducts
 
 
 def all_products(request):
     """A view to show all products, including sorting and search queries"""
 
     products = Product.objects.all()
-    query = None
-    categories = None
-    size = None
-    colour = None
-    sort = None
-    direction = None
-
-    if request.GET:
-        if "sort" in request.GET:
-            sortkey = request.GET["sort"]
-            sort = sortkey
-            if sortkey == "name":
-                sortkey = "lower_name"
-                products = products.annotate(lower_name=Lower("name"))
-            if sortkey == "category":
-                sortkey = "category__name"
-            if "direction" in request.GET:
-                direction = request.GET["direction"]
-                if direction == "desc":
-                    sortkey = f"-{sortkey}"
-            products = products.order_by(sortkey)
-
-        if "colour" in request.GET:
-            colour = request.GET["colour"].split(",")
-            products = products.filter(colour__in=colour)
-
-        if "size" in request.GET:
-            size = request.GET["size"].split(",")
-            products = products.filter(size__in=size)
-
-        if "category" in request.GET:
-            categories = request.GET["category"].split(",")
-            products = products.filter(category__name__in=categories)
-            categories = Category.objects.filter(name__in=categories)
-
-        if "q" in request.GET:
-            query = request.GET["q"]
-            if not query:
-                messages.error(request, "You didn't enter any search criteria!")
-                return redirect(reverse("products"))
-
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
-            products = products.filter(queries)
-
-    current_sorting = f"{sort}_{direction}"
-
+    products_info = Combination.objects.all()
+    custom_range, products = paginateProducts(request, products, 12)
+    
     context = {
-        "products": products,
-        "search_term": query,
-        "current_categories": categories,
-        "current_size": size,
-        "current_colour": colour,
-        "current_sorting": current_sorting,
+        'products': products,
+        "products_info": products_info
     }
 
     return render(request, "products/products.html", context)
