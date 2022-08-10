@@ -1,12 +1,12 @@
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 
-def paginateProducts(request, products, results):
-    '''
+def paginateProducts(request, products, page):
+    """
     returns a paginated range and the query
-    '''
-    page = request.GET.get('page')
-    paginator = Paginator(products, results)
+    """
+
+    paginator = Paginator(products, 12)
     try:
         products = paginator.page(page)
     except PageNotAnInteger:
@@ -16,12 +16,12 @@ def paginateProducts(request, products, results):
         page = paginator.num_pages
         products = paginator.page(page)
 
-    leftIndex = (int(page) - 1)
+    leftIndex = int(page) - 1
     if leftIndex < 1:
         leftIndex = 1
-    rightIndex = (int(page) + 2)
+    rightIndex = int(page) + 2
     if rightIndex > paginator.num_pages:
-        rightIndex = paginator.num_pages + 1
+        rightIndex = paginator.num_pages - 1
 
     custom_range = range(leftIndex, rightIndex)
 

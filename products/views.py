@@ -3,15 +3,17 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from django.shortcuts import get_object_or_404, redirect, render, reverse
 
-from products.models import Category, Product, Combination
+from products.models import Category, Combination, Product
 from products.utils import paginateProducts
 
 
-def all_products(request):
+def all_products(request, page=1):
     """A view to show all products, including sorting and search queries"""
 
     products = Combination.objects.values_list(
-        "sku", "name", "size", "rating", "colour")
+        "sku", "name", "size", "rating", "colour"
+    )
+    products = Combination.objects.all()
     query = None
     categories = None
     size = None
@@ -58,7 +60,7 @@ def all_products(request):
 
     current_sorting = f"{sort}_{direction}"
 
-    custom_range, products = paginateProducts(request, products, 12)
+    custom_range, products = paginateProducts(request, products, page)
 
     context = {
         "products": products,
@@ -68,7 +70,7 @@ def all_products(request):
         "current_colour": colour,
         "current_sorting": current_sorting,
     }
-
+    print(context)
     return render(request, "products/products.html", context)
 
 
@@ -80,7 +82,8 @@ def product_detail(request, product_id):
 
     context = {
         "product": product,
-        "products": product_combination
+        "products": product_combination,
+        "description": product_combination[0].description,
     }
 
     return render(request, "products/product_detail.html", context)

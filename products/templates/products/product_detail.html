@@ -26,7 +26,7 @@
                     {% endif %}
                 </div>
             </div>
-            {% for product in products %}
+
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-5">
                     <h3 class="mb-0 strong-text">{{ product.name }}</h3>
@@ -42,8 +42,13 @@
                     {% else %}
                         <small class="text-muted">No Rating</small>
                     {% endif %}
-                    <p class="mt-3">{{ product.description }}</p>
-                    
+
+                    <p class="mt-3">{{ description }}</p>
+                    {% for product in products %}
+                    <input type="radio" name="Product Types" value={{ product.option.product_type }}>
+                        {{ product.option.product_type }}
+                    {% endfor %}
+
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
@@ -101,7 +106,6 @@
                     </form>
                 </div>
             </div>
-            {% endfor %}
         </div>
     </div>
 {% endblock %}
