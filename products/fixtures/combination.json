@@ -125,12 +125,12 @@
       "fields":{
          "option":"1",
          "sku":"AHP10009",
-         "name":"Stone-Cairns",
+         "name":"stone-cairns",
          "description":"These beautiful landmarks are known as stone cairns/ rock cairns/ balancing rocks. Dating back to prehistoric times, these were used to help people guide their way to safety, villages and food as well as being used for memorials. Into modern day, they are used as summits on mountains and with the use of GPS in todays world, walkers enjoy making these, it can be seen as modern art among hikes and the country side. As seen in this photo, depth of field, tiny detail of a spiders web which displays the, modern man made world and nature adapting within this. ",
          "size":"Standard",
          "category":2,
          "colour":"Grey",
-         "image":"Stone-Cairns.jpg",
+         "image":"stone-cairns.jpg",
          "rating":4.3
       }
    },
@@ -1675,7 +1675,7 @@
          "size":"Standard",
          "category":2,
          "colour":"Grey",
-         "image":"Stone-Cairns.jpg",
+         "image":"stone-cairns.jpg",
          "rating":4.3
       }
    },
@@ -3220,7 +3220,7 @@
          "size":"Standard",
          "category":2,
          "colour":"Grey",
-         "image":"Stone-Cairns.jpg",
+         "image":"stone-cairns.jpg",
          "rating":4.3
       }
    },
@@ -4765,7 +4765,7 @@
          "size":"Standard",
          "category":2,
          "colour":"Grey",
-         "image":"Stone-Cairns.jpg",
+         "image":"stone-cairns.jpg",
          "rating":4.3
       }
    },
