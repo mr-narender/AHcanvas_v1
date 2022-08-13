@@ -22,6 +22,28 @@ def all_products(request, page=1):
     direction = None
 
     if request.GET:
+
+        if "colour" in request.GET:
+            colour = request.GET["colour"].split(",")
+            products = products.filter(colour__in=colour)
+
+        if "size" in request.GET:
+            size = request.GET["size"].split(",")
+            products = products.filter(size__in=size)
+
+        if "category" in request.GET:
+            categories = request.GET["category"].split(",")
+            products = products.filter(category__name__in=categories)
+
+        if "q" in request.GET:
+            query = request.GET["q"]
+            if not query:
+                messages.error(request, "You didn't enter any search criteria!")
+                return redirect(reverse("products"))
+
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            products = products.filter(queries)
+
         if "sort" in request.GET:
             sortkey = request.GET["sort"]
             sort = sortkey
@@ -36,31 +58,9 @@ def all_products(request, page=1):
                     sortkey = f"-{sortkey}"
             products = products.order_by(sortkey)
 
-        if "colour" in request.GET:
-            colour = request.GET["colour"].split(",")
-            products = products.filter(colour__in=colour)
-
-        if "size" in request.GET:
-            size = request.GET["size"].split(",")
-            products = products.filter(size__in=size)
-
-        if "category" in request.GET:
-            categories = request.GET["category"].split(",")
-            products = products.filter(category__name__in=categories)
-            categories = Category.objects.filter(name__in=categories)
-
-        if "q" in request.GET:
-            query = request.GET["q"]
-            if not query:
-                messages.error(request, "You didn't enter any search criteria!")
-                return redirect(reverse("products"))
-
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
-            products = products.filter(queries)
-
     current_sorting = f"{sort}_{direction}"
 
-    custom_range, products = paginateProducts(request, products, page)
+    custom_range, products = paginateProducts(request, products, 12)
 
     context = {
         "products": products,
@@ -69,6 +69,7 @@ def all_products(request, page=1):
         "current_size": size,
         "current_colour": colour,
         "current_sorting": current_sorting,
+        "custom_range": custom_range,
     }
     print(context)
     return render(request, "products/products.html", context)
