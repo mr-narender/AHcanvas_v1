@@ -86,8 +86,8 @@
                     {% endfor %}
                     <div class="row">
                         {% if products.has_other_pages %}
-                            <div id="pagination" class="mt-2 p-2">
-                                <ul class="container flex flex-row justify-content-center align-items-center gap-4">
+                            <div id="pagination" class="mt-2 p-2 justify-content-center">
+                                <ul class="container flex flex-row justify-content-center align-items-center gap-4 inline">
                                     {% if products.has_previous %}
                                     <li>
                                         <a href="?page={{ products.previous_page_number }}" class="btn page-btn primary-action" data-page="{{ products.previous_page_number }}">&#10094; Prev</a>

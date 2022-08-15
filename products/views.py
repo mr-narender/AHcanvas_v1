@@ -84,7 +84,10 @@ def product_detail(request, product_id):
     context = {
         "product": product,
         "products": product_combination,
+        "name": product_combination[0].name,
+        "rating": product_combination[0].rating,
         "description": product_combination[0].description,
+        "category": product_combination[0].category,
     }
 
     return render(request, "products/product_detail.html", context)

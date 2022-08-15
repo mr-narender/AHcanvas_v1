@@ -139,6 +139,10 @@ a.category-badge > span.badge:hover {
     color: white;
 }
 
+. ul li {
+    display: inline-block;
+}
+
 /* -------------------------------- Navbar toggler */
 
 .navbar-toggler {
