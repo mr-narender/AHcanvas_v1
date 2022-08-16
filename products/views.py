@@ -75,10 +75,10 @@ def all_products(request, page=1):
     return render(request, "products/products.html", context)
 
 
-def product_detail(request, product_id):
+def product_detail(request, product_sku):
     """A view to show individual product details"""
 
-    product = get_object_or_404(Product, pk=product_id)
+    product = get_object_or_404(Product, sku=product_sku)
     product_combination = Combination.objects.filter(sku=product.sku)
 
     context = {
