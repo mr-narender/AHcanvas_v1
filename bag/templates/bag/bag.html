@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load normalize_title %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -31,26 +32,22 @@
                                 <th scope="col"></th>
                                 <th scope="col">Price</th>
                                 <th scope="col">Type</th>
-                                <th scope="col">Subtotal</th>
                             </tr>
                         </thead>
                         {% for item in bag_items %}
                             <tr>
                                 <td class="p-3 w-25">
-                                    <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                                    <img class="img-fluid rounded" src="{{ item.combination.image.url }}">
                                 </td>
                                 <td class="py-3">
-                                    <p class="my-0"><strong>{{ product.option.name }}</strong></p>
-                                    <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                                    <p class="my-0 text-uppercase"><strong>{{ item.combination.name|normalize_title:'-' }}</strong></p>
+                                    <p class="my-0 small text-muted">SKU: {{ item.combination.sku|upper }}</p>
                                 </td>
                                 <td class="py-3">
-                                    <p class="my-0">£{{ item.product.option.product_price }}</p>
+                                    <p class="my-0">£{{ item.combination.option.product_price }}</p>
                                 </td>
                                 <td class="py-3 w-25">
-                                    <p class="my-0">{{ product }}</p>
-                                </td>
-                                <td class="py-3">
-                                    <p class="my-0">£{{ item.product.price }}</p>
+                                    <p class="my-0">{{ item.combination.option }}</p>
                                 </td>
                             </tr>
                         {% endfor %}

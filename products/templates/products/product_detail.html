@@ -33,7 +33,7 @@
                     <h2 class="mb-0 strong-text text-uppercase">{{ name|normalize_title:'-' }}</h2>
                     {% if category %}
                         <p class="small mt-1 mb-0">
-                            <a href="{% url 'products' %}?category={{ catergory }}" class="text-muted">
+                            <a href="{% url 'products' %}?category={{ category }}" class="text-muted">
                                 <i class="fa-solid fa-camera"></i> {{ category.friendly_name }}
                             </a>
                         </p>
