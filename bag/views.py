@@ -14,10 +14,19 @@ def add_to_bag(request, item_id):
 
     redirect_url = request.POST.get('redirect_url')
     product_types = request.POST.get('product_types')
+    price = request.POST.get('product_price')
 
     bag = request.session.get('bag', {})
 
-    bag[item_id] = product_types
+    # if this product cobination does not exists, then create a new sub bag
+    if not bag.get(item_id):
+        bag[item_id] = {}
+
+    # bag[item_id] = product_types
+
+    bag[item_id][product_types] = True
+    bag[item_id][price] = price
 
     request.session['bag'] = bag
+
     return redirect(redirect_url)

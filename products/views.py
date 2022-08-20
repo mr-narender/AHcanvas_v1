@@ -82,6 +82,7 @@ def product_detail(request, product_sku):
     product_combination = Combination.objects.filter(sku=product.sku)
 
     context = {
+        "product_id": product_combination[0].id,
         "product": product,
         "products": product_combination,
         "name": product_combination[0].name,

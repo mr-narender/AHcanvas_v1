@@ -8,5 +8,5 @@ for file in os.listdir(directory):
         filepath = os.path.join(directory, file)
         outfile = os.path.join(directory, 'resized_'+file)
         with Image.open(directory+'/'+file) as im:
-            im.thumbnail((350, 250))
+            im.thumbnail((350, 250), Image.ANTIALIAS)
             im.save(outfile)
