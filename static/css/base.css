@@ -74,8 +74,7 @@ a:hover {
 }
 
 .shop-button {
-    background: green;
-    color: white;
+    background: white;
     min-width: 260px;
 }
 
@@ -83,19 +82,23 @@ a:hover {
 .shop-button:active,
 .shop-button:focus {
     background: #222;
-    color: white;
+    color: green;
 }
 
-.btn-grn {
-    background: green;
-    color: white;
-}
-
-.btn-grn:hover,
-.btn-grn:active,
-.btn-grn:focus {
+.bag {
+    border: none;
     background: white;
     color: green;
+}
+
+.bag:hover {
+    background: black;
+    color: green;
+}
+
+.btn:hover {
+    background: black;
+    color: white;
 }
 
 .text-black {
@@ -132,6 +135,19 @@ a.category-badge > span.badge:hover {
 .btt-link {
     cursor: pointer;
 }
+
+tr, td {
+    color: green;
+}
+
+h2 {
+    color: green;
+}
+
+.option {
+    color: green;
+}
+
 /* -------------------------------- Pagination */
 
 .pagination ul li {
