@@ -11,13 +11,14 @@ def bag_contents(request):
 
     for item_id, quantity in bag.items():
         combination = get_object_or_404(Combination, pk=item_id)
-        all_prodcuts_for_purchase = Combination.objects.filter(
-            sku=combination.sku).filter(option__in=ProductType.objects.filter(
-                product_type__in=quantity))
-
-        total = total + combination.option.product_price.product_price
+        # all_prodcuts_for_purchase = Combination.objects.filter(
+        #     sku=combination.sku).filter(option__in=ProductType.objects.filter(
+        #         product_type__in=quantity))
+        total += quantity * combination.option.product_price.product_price
+        product_count += quantity
         bag_items.append({
             'item_id': item_id,
+            'quantity': quantity,
             'combination': combination,
         })
 
