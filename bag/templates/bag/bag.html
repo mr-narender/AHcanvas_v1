@@ -40,7 +40,9 @@
                         {% for item in bag_items %}
                             <tr>
                                 <td class="p-3 w-25">
-                                    <img class="img-fluid rounded" src="{{ item.combination.image.url }}">
+                                    <a href="{% url 'product_detail' item.combination.sku %}">
+                                        <img class="img-fluid rounded" src="{{ item.combination.image.url }}">
+                                    </a>
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0 text-uppercase"><strong>{{ item.combination.name|normalize_title:'-' }}</strong></p>
@@ -96,7 +98,7 @@
                                     </span>
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
-                                <a href="" class="btn rounded-0 btn-lg">
+                                <a href="{% url 'checkout' %}" class="btn rounded-0 btn-lg">
                                     <span class="text-uppercase">Secure Checkout</span>
                                     <span class="icon">
                                         <i class="fas fa-lock"></i>
