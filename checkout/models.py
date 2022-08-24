@@ -29,6 +29,13 @@ class Order(models.Model):
         """
         return uuid.uuid4().hex.upper()
 
+    def update_total(self):
+        """
+        Update total each time a line item is added
+        """
+        self.total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        self.save()
+
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the order number
@@ -53,8 +60,8 @@ class OrderLineItem(models.Model):
         Override the original save method to set the lineitem total
         and update the order total.
         """
-        self.lineitem_total = self.combination.option.product_price.product_price * self.quantity
+        self.lineitem_total = self.product.option.product_price.product_price * self.quantity
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'SKU {self.combination.sku} on order {self.order.order_number}'
+        return f'SKU {self.product.sku} on order {self.order.order_number}'
