@@ -35,9 +35,10 @@ def add_to_bag(request, item_id):
 
     if str(combination.id) in list(bag.keys()):
         bag[str(combination.id)] += quantity
+        messages.success(request, f'Updated {combination.name} quantity to {bag[item_id]}')
     else:
         bag[combination.id] = quantity
-        messages.error(request, f'Added {combination.name} to your bag')
+        messages.success(request, f'Added {combination.name} to your bag')
 
     request.session['bag'] = bag
     return redirect(redirect_url)
@@ -63,11 +64,14 @@ def adjust_bag(request, item_id):
 
     if quantity > 0:
         bag[combination.id] = quantity
+        messages.success(request, f'Updated {combination.name} quantity to {bag[item_id]}')
     else:
         if quantity > 0:
             bag[combination.id] = quantity
+            messages.success(request, f'Updated {combination.name} quantity to {bag[item_id]}')
         else:
             bag.pop(combination.id)
+            messages.success(request, f'Removed {combination.name} from your bag')
 
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
@@ -94,11 +98,14 @@ def remove_from_bag(request, item_id):
     try:
         if quantity <= 0:
             del bag[combination.id]
+            messages.success(request, f'Removed {combination.name} from your bag')
         else:
             bag.pop(combination.id)
+            messages.success(request, f'Removed {combination.name} from your bag')
 
         request.session['bag'] = bag
         return HttpResponse(status=200)
 
     except Exception as e:
+        messages.error(request, f'Error removing item: {e}')
         return HttpResponse(status=500)
