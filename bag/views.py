@@ -34,10 +34,10 @@ def add_to_bag(request, item_id):
     bag = request.session.get('bag', {})
 
     if str(combination.id) in list(bag.keys()):
-        bag[str(combination.id)] += quantity
+        bag[f"{combination.id}"] += quantity
         messages.success(request, f'Updated {combination.name} quantity to {bag[item_id]}')
     else:
-        bag[combination.id] = quantity
+        bag[f"{combination.id}"] = quantity
         messages.success(request, f'Added {combination.name} to your bag')
 
     request.session['bag'] = bag
@@ -63,14 +63,14 @@ def adjust_bag(request, item_id):
     bag = request.session.get('bag', {})
 
     if quantity > 0:
-        bag[combination.id] = quantity
+        bag[f"{combination.id}"] = quantity
         messages.success(request, f'Updated {combination.name} quantity to {bag[item_id]}')
     else:
         if quantity > 0:
-            bag[combination.id] = quantity
+            bag[f"{combination.id}"] = quantity
             messages.success(request, f'Updated {combination.name} quantity to {bag[item_id]}')
         else:
-            bag.pop(combination.id)
+            bag.pop(f"{combination.id}")
             messages.success(request, f'Removed {combination.name} from your bag')
 
     request.session['bag'] = bag
@@ -81,7 +81,7 @@ def remove_from_bag(request, item_id):
     """ Remove the item from the shopping bag """
 
     product_types = request.POST.get('product_types')
-    quantity = int(request.POST.get('quantity'))
+    quantity = int(request.POST.get('quantity', 0))
     option = 0
     if product_types == 'STANDARD':
         option = 1
@@ -96,12 +96,9 @@ def remove_from_bag(request, item_id):
     bag = request.session.get('bag', {})
 
     try:
-        if quantity <= 0:
-            del bag[combination.id]
-            messages.success(request, f'Removed {combination.name} from your bag')
-        else:
-            bag.pop(combination.id)
-            messages.success(request, f'Removed {combination.name} from your bag')
+
+        bag.pop(f"{combination.id}")
+        messages.success(request, f'Removed {combination.name} from your bag')
 
         request.session['bag'] = bag
         return HttpResponse(status=200)

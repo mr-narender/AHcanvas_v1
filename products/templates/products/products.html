@@ -84,35 +84,35 @@
                             </div>
                         </div>
                     {% endfor %}
-                    <div class="row">
-                        {% if products.has_other_pages %}
-                            <div id="pagination" class="mt-2 p-2 justify-content-center">
-                                <ul class="container flex flex-row justify-content-center align-items-center gap-4 inline">
-                                    {% if products.has_previous %}
-                                    <li>
-                                        <a href="?page={{ products.previous_page_number }}" class="btn page-btn primary-action" data-page="{{ products.previous_page_number }}">&#10094; Prev</a>
-                                    </li>
-                                    {% endif %}
-                                    {% for page in custom_range %}
-                                    {% if page == products.number %}
-                                    <li>
-                                        <a href="?page={{page}}" class="btn page-btn page-btn-alt primary-action" data-page="{{ page }}">{{ page }}</a>
-                                    </li>
-                                    {% else %}
-                                    <li>
-                                        <a href="?page={{page}}" class="btn page-btn primary-action" data-page="{{ page }}">{{ page }}</a>
-                                    </li>
-                                    {% endif %}
-                                    {% endfor %}
-                                    {% if products.has_next %}
-                                    <li>
-                                        <a href="?page={{ products.next_page_number }}" class="btn page-btn primary-action" data-page="{{ products.next_page_number }}">Next &#10095;</a>
-                                    </li>
-                                    {% endif %}
-                                </ul>
-                            </div>
-                        {% endif %}
-                    </div>
+                </div>
+                <div class="row">
+                    {% if products.has_other_pages %}
+                        <div id="pagination" class="mt-2 p-2 justify-content-center">
+                            <ul class="pagination container flex flex-row justify-content-center align-items-center gap-4 inline">
+                                {% if products.has_previous %}
+                                <li>
+                                    <a href="?page={{ products.previous_page_number }}" class="btn page-btn primary-action" data-page="{{ products.previous_page_number }}">&#10094; Prev</a>
+                                </li>
+                                {% endif %}
+                                {% for page in custom_range %}
+                                {% if page == products.number %}
+                                <li>
+                                    <a href="?page={{page}}" class="btn page-btn page-btn-alt primary-action" data-page="{{ page }}">{{ page }}</a>
+                                </li>
+                                {% else %}
+                                <li>
+                                    <a href="?page={{page}}" class="btn page-btn primary-action" data-page="{{ page }}">{{ page }}</a>
+                                </li>
+                                {% endif %}
+                                {% endfor %}
+                                {% if products.has_next %}
+                                <li>
+                                    <a href="?page={{ products.next_page_number }}" class="btn page-btn primary-action" data-page="{{ products.next_page_number }}">Next &#10095;</a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

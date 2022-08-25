@@ -33,7 +33,7 @@ a:hover {
     color: green;
 }
 
-#special-banner {
+.special-banner {
     background: green;
 }
 
@@ -158,13 +158,13 @@ h2 {
 
 /* -------------------------------- Pagination */
 
+ul.pagination > li {
+    display: inline-block;
+  }
+  
 .pagination ul li {
     background: green;
     color: white;
-}
-
-#pagination {
-    display: inline-block;
 }
 
 /* -------------------------------- Card Image */
