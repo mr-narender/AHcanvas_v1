@@ -156,6 +156,10 @@ h2 {
     color: green;
 }
 
+.about {
+    height: 600px;
+}
+
 /* -------------------------------- Pagination */
 
 ul.pagination > li {
