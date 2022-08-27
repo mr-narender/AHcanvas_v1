@@ -1,8 +1,15 @@
 from django import forms
-from .models import Product, Combination, ProductPrice, ProductType, Category
+from .models import Product, Combination, Category
 
 
 class ProductForm(forms.ModelForm):
+
+    class Meta:
+        model = Product
+        fields = '__all__'
+
+
+class CombinationForm(forms.ModelForm):
 
     class Meta:
         model = Combination

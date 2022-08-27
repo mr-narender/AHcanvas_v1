@@ -4,7 +4,7 @@ from django.db.models.functions import Lower
 from django.shortcuts import get_object_or_404, redirect, render, reverse
 
 from products.models import Category, Combination, Product
-from .forms import ProductForm
+from .forms import ProductForm, CombinationForm
 from products.utils import paginateProducts
 
 
@@ -98,10 +98,43 @@ def product_detail(request, product_sku):
 
 def add_product(request):
     """ Add a product to the store """
-    form = ProductForm()
-    template = 'products/add_products.html'
+
+    if request.method == 'POST':
+        form_product = ProductForm(request.POST, request.FILES)
+        if form_product.is_valid():
+            form_product.save()
+            messages.success(request, 'Successfully added product!')
+            return redirect(reverse('add_product'))
+        else:
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+    else:
+        form_product = ProductForm()
+
+    template = 'products/add_product.html'
     context = {
-        'form': form,
+        'form': form_product,
+    }
+
+    return render(request, template, context)
+
+
+def add_combination(request):
+    """ Add a combination to the store """
+
+    if request.method == 'POST':
+        form_combination = CombinationForm(request.POST, request.FILES)
+        if form_combination.is_valid():
+            form_combination.save()
+            messages.success(request, 'Successfully added combination!')
+            return redirect(reverse('add_combination'))
+        else:
+            messages.error(request, 'Failed to add combination. Please ensure the form is valid.')
+    else:
+        form_combination = CombinationForm()
+
+    template = 'products/add_combination.html'
+    context = {
+        'form': form_combination,
     }
 
     return render(request, template, context)
