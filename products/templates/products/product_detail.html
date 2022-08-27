@@ -15,6 +15,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-10 mx-auto d-block">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="mb-0 mt-5 strong-text text-uppercase" style="text-align: center;">{{ name|normalize_title:'-' }}</h2>
+                    </div>
+                </div>
                 <div class="image-container my-5">
                     {% if size == 'Panorama' %}
                         {% if product.image %}
@@ -41,9 +46,9 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="product-details-container mb-5 mt-md-5">
-                    <h2 class="mb-0 strong-text text-uppercase">{{ name|normalize_title:'-' }}</h2>
+            <div class="col">
+                <div class="product-details-container ml-3 mr-3">
+                    <h4 class="mb-0 strong-text text-uppercase">{{ name|normalize_title:'-' }}</h4>
                     {% if category %}
                         <p class="small mt-1 mb-0">
                             <a href="{% url 'products' %}?category={{ category }}" class="text-muted">
@@ -59,54 +64,56 @@
                     <p class="mt-3">{{ description }}</p>
                 </div>
             </div>
-            <form class="form" action="{% url 'add_to_bag' product_id %}" method="POST">
-                {% csrf_token %}
-                <div class="col">
-                    <p class="mt-3 sub-title"><strong>Quantity:</strong></p>
-                    <div class="form-group w-50">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <button class="decrement-qty btn rounded-0" data-item_id="{{ product.option.id }}" id="decrement-qty_{{ product.option.id }}">
-                                    <span class="icon">
-                                        <i class="fas fa-minus"></i>
-                                    </span>
-                                </button>
-                            </div>
-                            <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.option.id }}" id="id_qty_{{ product.option.id }}">
-                            <div class="input-group-append">
-                                <button class="increment-qty btn rounded-0" data-item_id="{{ product.option.id }}" id="increment-qty_{{ product.option.id }}">
-                                    <span class="icon">
-                                        <i class="fas fa-plus"></i>
-                                    </span>
-                                </button>
+            <div class="col">
+                <div class="buying-options-container">
+                    <form class="form" action="{% url 'add_to_bag' product_id %}" method="POST">
+                        {% csrf_token %}
+                        <p class="sub-title"><strong>Quantity:</strong></p>
+                        <div class="form-group w-50">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button class="decrement-qty btn rounded-0" data-item_id="{{ product.option.id }}" id="decrement-qty_{{ product.option.id }}">
+                                        <span class="icon">
+                                            <i class="fas fa-minus"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                                <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.option.id }}" id="id_qty_{{ product.option.id }}">
+                                <div class="input-group-append">
+                                    <button class="increment-qty btn rounded-0" data-item_id="{{ product.option.id }}" id="increment-qty_{{ product.option.id }}">
+                                        <span class="icon">
+                                            <i class="fas fa-plus"></i>
+                                        </span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="form-row">
+                            <div class="col-12 mb-3">
+                                <p class="mt-3 sub-title"><strong>Buying Options:</strong></p>
+                                {% for product in products %}
+                                    <label class="radio">
+                                        <input type="hidden" name="sku" value="{{ product.sku }}" />
+                                        <input type="radio" name="product_types" value="{{ product.option.product_type }}" data-item_id="{{ product.option.pk }}" id="{{ product.option.pk }}">
+                                            <img src="{{ product.option.type_image.url }}" alt="buying-size">
+                                            <p class="price">£{{ product.option.product_price }}</p>
+                                    </label>
+                                {% endfor %}
+                            <div class="col-12 mb-3">
+                                <a href="{% url 'products' %}" class="rounded-0 mr-3">
+                                    <span class="icon">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="text-uppercase shop-button">Keep Shopping</span>
+                                </a>
+                                <input type="submit" class="rounded-0 text-uppercase bag" value="Add to Bag">
+                            </div>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </div>
+                    </form>
                 </div>
-                <div class="form-row">
-                    <div class="col-12">
-                        <p class="mt-3 sub-title"><strong>Buying Options:</strong></p>
-                        {% for product in products %}
-                            <label class="radio">
-                                <input type="hidden" name="sku" value="{{ product.sku }}" />
-                                <input type="radio" name="product_types" value="{{ product.option.product_type }}" data-item_id="{{ product.option.pk }}" id="{{ product.option.pk }}">
-                                    <img src="{{ product.option.type_image.url }}" alt="buying-size">
-                                    <p class="price">£{{ product.option.product_price }}</p>
-                            </label>
-                        {% endfor %}
-                    <div class="col-12">
-                        <a href="{% url 'products' %}" class="rounded-0 mt-5 mr-3">
-                            <span class="icon">
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="text-uppercase shop-button">Keep Shopping</span>
-                        </a>
-                        <input type="submit" class="rounded-0 text-uppercase mt-5 bag" value="Add to Bag">
-                    </div>
-                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                </div>
-            </form>
-         </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
 
