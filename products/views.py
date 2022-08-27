@@ -89,6 +89,7 @@ def product_detail(request, product_sku):
         "rating": product_combination[0].rating,
         "description": product_combination[0].description,
         "category": product_combination[0].category,
+        "size": product_combination[0].size,
     }
 
     return render(request, "products/product_detail.html", context)
