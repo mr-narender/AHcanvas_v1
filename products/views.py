@@ -93,8 +93,10 @@ def product_detail(request, product_sku):
         "description": product_combination[0].description,
         "category": product_combination[0].category,
         "size": product_combination[0].size,
+        "image": product_combination[0].image,
     }
 
+    print(context)
     return render(request, "products/product_detail.html", context)
 
 
@@ -130,8 +132,7 @@ def add_combination(request):
             messages.success(request, 'Successfully added combination!')
             return redirect(reverse('add_combination'))
         else:
-            messages.error(
-                request, 'Failed to add combination. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add combination. Please ensure the form is valid.')
     else:
         form_combination = CombinationForm()
 

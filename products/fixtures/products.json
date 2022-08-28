@@ -1,7 +1,7 @@
 [
    {
       "pk":1,
-      "model":"products.combination",
+      "model":"products.product",
       "fields":{
          "sku":"AHP10001"
       }

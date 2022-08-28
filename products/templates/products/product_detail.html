@@ -22,9 +22,9 @@
                 </div>
                 <div class="image-container my-5">
                     {% if size == 'Panorama' %}
-                        {% if product.image %}
-                        <a href="{{ product.image.url }}" target="_blank">
-                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="prod-img prod-panorama mx-auto d-block">
+                        {% if image %}
+                        <a href="{{ image.url }}" target="_blank">
+                            <img src="{{ image.url }}" alt="{{ product.name }}" class="prod-img prod-panorama mx-auto d-block">
                         </a>
                         {% else %}
                         <a href="">
@@ -32,9 +32,9 @@
                         </a>
                         {% endif %}
                     {% else %}
-                        {% if product.image %}
-                        <a href="{{ product.image.url }}" target="_blank">
-                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="prod-img prod-standard mx-auto d-block">
+                        {% if image %}
+                        <a href="{{ image.url }}" target="_blank">
+                            <img src="{{ image.url }}" alt="{{ product.name }}" class="prod-img prod-standard mx-auto d-block">
                         </a>
                         {% else %}
                         <a href="">
