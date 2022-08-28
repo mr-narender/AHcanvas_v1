@@ -138,3 +138,41 @@ def add_combination(request):
     }
 
     return render(request, template, context)
+
+
+def edit_product(request, product_sku):
+    """ Edit a product in the store """
+
+    product = get_object_or_404(Product, sku=product_sku)
+    form_product = ProductForm(instance=product)
+    messages.info(request, f'You are editing {product.sku}')
+
+    template = 'products/edit_product.html'
+    context = {
+        'form': form_product,
+        'product': product,
+    }
+
+    return render(request, template, context)
+
+
+def edit_combination(request, product_sku, pk):
+
+    combination = Combination.objects.get(sku=product_sku, pk=pk)
+    product_combination = Combination.objects.filter(sku=product_sku)
+
+    product = Product.objects.get(sku=product_sku)
+    
+    form_combination = CombinationForm(instance=combination)
+    messages.info(request, f'You are editing {combination.sku}')
+
+    template = 'products/edit_combination.html'
+    context = {
+        'form': form_combination,
+        "product_id": pk,
+        "product": product,
+        "products": product_combination,
+        'combination': combination,
+    }
+
+    return render(request, template, context)
