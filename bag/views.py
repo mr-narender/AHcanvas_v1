@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import HttpResponse
 from django.contrib import messages
 
 from products.models import Combination
@@ -35,7 +36,8 @@ def add_to_bag(request, item_id):
 
     if str(combination.id) in list(bag.keys()):
         bag[f"{combination.id}"] += quantity
-        messages.success(request, f'Updated {combination.name} quantity to {bag[item_id]}')
+        messages.success(
+            request, f'Updated {combination.name} quantity to {bag[item_id]}')
     else:
         bag[f"{combination.id}"] = quantity
         messages.success(request, f'Added {combination.name} to your bag')
@@ -45,7 +47,8 @@ def add_to_bag(request, item_id):
 
 
 def adjust_bag(request, item_id):
-    """ Adjust the quantity of the specified product to the specified amount """
+    """ Adjust the quantity of the specified product to the specified amount
+    """
 
     product_types = request.POST.get('product_types')
     quantity = int(request.POST.get('quantity'))
@@ -64,14 +67,18 @@ def adjust_bag(request, item_id):
 
     if quantity > 0:
         bag[f"{combination.id}"] = quantity
-        messages.success(request, f'Updated {combination.name} quantity to {bag[item_id]}')
+        messages.success(
+            request, f'Updated {combination.name} quantity to {bag[item_id]}')
     else:
         if quantity > 0:
             bag[f"{combination.id}"] = quantity
-            messages.success(request, f'Updated {combination.name} quantity to {bag[item_id]}')
+            messages.success(
+                request,
+                f'Updated {combination.name} quantity to {bag[item_id]}')
         else:
             bag.pop(f"{combination.id}")
-            messages.success(request, f'Removed {combination.name} from your bag')
+            messages.success(
+                request, f'Removed {combination.name} from your bag')
 
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))

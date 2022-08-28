@@ -39,10 +39,12 @@ def all_products(request, page=1):
         if "q" in request.GET:
             query = request.GET["q"]
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request, "You didn't enter any search criteria!")
                 return redirect(reverse("products"))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | Q(
+                description__icontains=query)
             products = products.filter(queries)
 
         if "sort" in request.GET:
@@ -128,7 +130,8 @@ def add_combination(request):
             messages.success(request, 'Successfully added combination!')
             return redirect(reverse('add_combination'))
         else:
-            messages.error(request, 'Failed to add combination. Please ensure the form is valid.')
+            messages.error(
+                request, 'Failed to add combination. Please ensure the form is valid.')
     else:
         form_combination = CombinationForm()
 
@@ -162,7 +165,7 @@ def edit_combination(request, product_sku, pk):
     product_combination = Combination.objects.filter(sku=product_sku)
 
     product = Product.objects.get(sku=product_sku)
-    
+
     form_combination = CombinationForm(instance=combination)
     messages.info(request, f'You are editing {combination.sku}')
 
