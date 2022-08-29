@@ -5,7 +5,7 @@ def paginateProducts(request, products, result):
     """
     returns a paginated range and the query
     """
-    page = request.GET.get('page')
+    page = request.GET.get("page")
     paginator = Paginator(products, result)
     try:
         products = paginator.page(page)

@@ -7,60 +7,87 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('products', '0006_auto_20220803_2112'),
+        ("products", "0006_auto_20220803_2112"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='producttype',
-            old_name='product_image',
-            new_name='type_image',
+            model_name="producttype",
+            old_name="product_image",
+            new_name="type_image",
         ),
         migrations.RemoveField(
-            model_name='product',
-            name='category',
+            model_name="product",
+            name="category",
         ),
         migrations.RemoveField(
-            model_name='product',
-            name='colour',
+            model_name="product",
+            name="colour",
         ),
         migrations.RemoveField(
-            model_name='product',
-            name='description',
+            model_name="product",
+            name="description",
         ),
         migrations.RemoveField(
-            model_name='product',
-            name='name',
+            model_name="product",
+            name="name",
         ),
         migrations.RemoveField(
-            model_name='product',
-            name='rating',
+            model_name="product",
+            name="rating",
         ),
         migrations.RemoveField(
-            model_name='product',
-            name='size',
+            model_name="product",
+            name="size",
         ),
         migrations.RemoveField(
-            model_name='producttype',
-            name='product',
+            model_name="producttype",
+            name="product",
         ),
         migrations.AlterField(
-            model_name='product',
-            name='sku',
-            field=models.CharField(default='', max_length=254),
+            model_name="product",
+            name="sku",
+            field=models.CharField(default="", max_length=254),
         ),
         migrations.CreateModel(
-            name='Combination',
+            name="Combination",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('sku', models.CharField(max_length=254)),
-                ('name', models.CharField(max_length=254)),
-                ('size', models.CharField(max_length=254)),
-                ('description', models.TextField()),
-                ('rating', models.DecimalField(blank=True, decimal_places=2, max_digits=6, null=True)),
-                ('colour', models.CharField(max_length=254)),
-                ('category', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='products.category')),
-                ('option', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='products.producttype')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("sku", models.CharField(max_length=254)),
+                ("name", models.CharField(max_length=254)),
+                ("size", models.CharField(max_length=254)),
+                ("description", models.TextField()),
+                (
+                    "rating",
+                    models.DecimalField(
+                        blank=True, decimal_places=2, max_digits=6, null=True
+                    ),
+                ),
+                ("colour", models.CharField(max_length=254)),
+                (
+                    "category",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        to="products.category",
+                    ),
+                ),
+                (
+                    "option",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="products.producttype",
+                    ),
+                ),
             ],
         ),
     ]

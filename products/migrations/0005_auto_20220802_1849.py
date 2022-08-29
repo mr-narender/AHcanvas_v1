@@ -7,36 +7,80 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('products', '0004_option'),
+        ("products", "0004_option"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='ProductPrice',
+            name="ProductPrice",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('product_price', models.DecimalField(decimal_places=2, max_digits=6)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("product_price", models.DecimalField(decimal_places=2, max_digits=6)),
             ],
         ),
         migrations.CreateModel(
-            name='ProductType',
+            name="ProductType",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('product_type', models.CharField(blank=True, choices=[('STANDARD', 'standard'), ('PANORAMIC', 'panoramic'), ('3PANEL', '3panel'), ('5PANEL', '5panel')], max_length=254, null=True)),
-                ('product_image', models.ImageField(blank=True, null=True, upload_to='')),
-                ('product_price', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='products.productprice')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "product_type",
+                    models.CharField(
+                        blank=True,
+                        choices=[
+                            ("STANDARD", "standard"),
+                            ("PANORAMIC", "panoramic"),
+                            ("3PANEL", "3panel"),
+                            ("5PANEL", "5panel"),
+                        ],
+                        max_length=254,
+                        null=True,
+                    ),
+                ),
+                (
+                    "product_image",
+                    models.ImageField(blank=True, null=True, upload_to=""),
+                ),
+                (
+                    "product_price",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="products.productprice",
+                    ),
+                ),
             ],
         ),
         migrations.DeleteModel(
-            name='Option',
+            name="Option",
         ),
         migrations.RemoveField(
-            model_name='product',
-            name='price',
+            model_name="product",
+            name="price",
         ),
         migrations.AddField(
-            model_name='product',
-            name='product_type',
-            field=models.ForeignKey(blank=True, max_length=254, null=True, on_delete=django.db.models.deletion.CASCADE, to='products.producttype'),
+            model_name="product",
+            name="product_type",
+            field=models.ForeignKey(
+                blank=True,
+                max_length=254,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="products.producttype",
+            ),
         ),
     ]
