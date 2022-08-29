@@ -4,7 +4,7 @@ from django.db.models.functions import Lower
 from django.shortcuts import get_object_or_404, redirect, render, reverse
 
 from products.models import Category, Combination, Product
-from .forms import ProductForm, CombinationForm
+from .forms import ProductForm, CombinationForm, DeleteForm
 from products.utils import paginateProducts
 
 
@@ -12,7 +12,7 @@ def all_products(request, page=1):
     """A view to show all products, including sorting and search queries"""
 
     products = Combination.objects.values_list(
-        "sku", "name", "size", "rating", "colour"
+        "sku", "name", "size", "rating", "colour",
     )
     products = Combination.objects.all()
     query = None
@@ -94,6 +94,7 @@ def product_detail(request, product_sku):
         "category": product_combination[0].category,
         "size": product_combination[0].size,
         "image": product_combination[0].image,
+        "option": product_combination[0].option
     }
 
     print(context)
@@ -108,7 +109,7 @@ def add_product(request):
         if form_product.is_valid():
             form_product.save()
             messages.success(request, 'Successfully added product!')
-            return redirect(reverse('add_product'))
+            return redirect(reverse('products'))
         else:
             messages.error(
                 request, 'Failed to add product. Please ensure the form is valid.')
@@ -129,9 +130,9 @@ def add_combination(request):
     if request.method == 'POST':
         form_combination = CombinationForm(request.POST, request.FILES)
         if form_combination.is_valid():
-            form_combination.save()
+            combination = form_combination.save()
             messages.success(request, 'Successfully added combination!')
-            return redirect(reverse('add_combination'))
+            return redirect(reverse('product_detail', args=[combination.sku]))
         else:
             messages.error(
                 request, 'Failed to add combination. Please ensure the form is valid.')
@@ -173,6 +174,7 @@ def edit_product(request, product_sku):
 
 
 def edit_combination(request, product_sku, pk):
+    """ Edit a combination in the store """
 
     combination = Combination.objects.get(sku=product_sku, pk=pk)
     product_combination = Combination.objects.filter(sku=product_sku)
@@ -201,3 +203,15 @@ def edit_combination(request, product_sku, pk):
     }
 
     return render(request, template, context)
+
+
+def delete_product(request, product_sku):
+    """ Delete a product from the store """
+    product = get_object_or_404(Product, sku=product_sku)
+    product_combination = Combination.objects.filter(sku=product.sku)
+    for item in product_combination:
+        item.delete()
+    product.delete()
+    messages.success(request, 'Product deleted!')
+
+    return redirect(reverse('products'))
