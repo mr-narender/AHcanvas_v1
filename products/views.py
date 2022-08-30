@@ -43,10 +43,12 @@ def all_products(request, page=1):
         if "q" in request.GET:
             query = request.GET["q"]
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request, "You didn't enter any search criteria!")
                 return redirect(reverse("products"))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | Q(
+                description__icontains=query)
             products = products.filter(queries)
 
         if "sort" in request.GET:
@@ -76,7 +78,6 @@ def all_products(request, page=1):
         "current_sorting": current_sorting,
         "custom_range": custom_range,
     }
-    print(context)
     return render(request, "products/products.html", context)
 
 
@@ -96,7 +97,7 @@ def product_detail(request, product_sku):
         "category": product_combination[0].category,
         "size": product_combination[0].size,
         "image": product_combination[0].image,
-        "option": product_combination[0].option,
+        "pk": product_combination[0].pk,
     }
 
     print(context)
@@ -114,7 +115,8 @@ def add_product(request):
             return redirect(reverse("products"))
         else:
             messages.error(
-                request, "Failed to add product. Please ensure the form is valid."
+                request,
+                "Failed to add product. Please ensure the form is valid."
             )
     else:
         form_product = ProductForm()
@@ -138,7 +140,8 @@ def add_combination(request):
             return redirect(reverse("product_detail", args=[combination.sku]))
         else:
             messages.error(
-                request, "Failed to add combination. Please ensure the form is valid."
+                request,
+                "Failed to add combination. Please ensure the form is valid."
             )
     else:
         form_combination = CombinationForm()
@@ -151,60 +154,41 @@ def add_combination(request):
     return render(request, template, context)
 
 
-def edit_product(request, product_sku):
-    """Edit a product in the store"""
+def get_combination(request):
+    """ A view to get all the combinations """
 
-    product = get_object_or_404(Product, sku=product_sku)
-    if request.method == "POST":
-        form = ProductForm(request.POST, request.FILES, instance=product)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "Successfully updated product!")
-            return redirect(reverse("product_detail", args=[product.sku]))
-        else:
-            messages.error(
-                request, "Failed to update product. Please ensure the form is valid."
-            )
-    else:
-        form_product = ProductForm(instance=product)
-        messages.info(request, f"You are editing {product.sku}")
+    combinations = Combination.objects.all()
+    form = CombinationForm()
 
-    template = "products/edit_product.html"
     context = {
-        "form": form_product,
-        "product": product,
+        'combinations': combinations,
     }
 
-    return render(request, template, context)
+    return render(request, 'products/get_combination.html', context)
 
 
-def edit_combination(request, product_sku, pk):
-    """Edit a combination in the store"""
-
-    combination = Combination.objects.get(sku=product_sku, pk=pk)
-    product_combination = Combination.objects.filter(sku=product_sku)
-    product = Product.objects.get(sku=product_sku)
-    if request.method == "POST":
-        form = CombinationForm(request.POST, request.FILES, instance=combination)
+def edit_product(request, product_id):
+    """ Edit a product in the store """
+    combination = get_object_or_404(Combination, pk=product_id)
+    if request.method == 'POST':
+        form = CombinationForm(
+            request.POST, request.FILES, instance=combination)
         if form.is_valid():
             form.save()
-            messages.success(request, "Successfully updated product!")
-            return redirect(reverse("product_detail", args=[product.sku]))
+            messages.success(request, 'Successfully updated product!')
+            return redirect(reverse('combinations'))
         else:
             messages.error(
-                request, "Failed to update product. Please ensure the form is valid."
-            )
+                request,
+                'Failed to update product. Please ensure the form is valid.')
     else:
-        form_combination = CombinationForm(instance=combination)
-        messages.info(request, f"You are editing {combination.sku}")
+        form = ProductForm(instance=combination)
+        messages.info(request, f'You are editing {combination.name}')
 
-    template = "products/edit_combination.html"
+    template = 'products/get_combination.html'
     context = {
-        "form": form_combination,
-        "product_id": pk,
-        "product": product,
-        "products": product_combination,
-        "combination": combination,
+        'form': form,
+        'combination': combination,
     }
 
     return render(request, template, context)
