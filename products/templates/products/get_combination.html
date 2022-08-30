@@ -26,12 +26,12 @@
         <div class="row">
             <div class="col">
                <div class="combination-selecter">
-                    <form action="">
+                    <form class="combination-details">
                         <div class="row">
-                            <label class="radio">Select a Combination: </label> 
-                                <select name="get_combination" id="get_combination">
+                            <label class="dropdown">Select a Combination: </label> 
+                                <select name="combination_details" id="combination_details">
                                     {% for combination in combinations %}               
-                                        <option value="{{ combination }}">{{ combination.name }} - {{ combination.option }}</option>
+                                        <option value="{{ combination.pk }}" data-product_id="{{ combination.pk }}" id="{{ combination.pk }}">{{ combination.name }} - {{ combination.option }}</option>
                                     {% endfor %}
                                 </select>
                             </label>
@@ -39,16 +39,17 @@
                                 <button class="rounded-0 text-uppercase bag" type="submit">Get Combination</button>
                             </div>
                         </div>
-                        <div class="ol-12 col-md-6 mt-3">
-                            <form action="" method="POST" class="form mb-2" enctype="multipart/form-data">
-                                {% csrf_token %}
-                                {{ form | crispy}}
-                                <div class="text-right">
-                                    <a href="{% url 'products' %}" class="btn rounded-0 text-uppercase">Cancel</a>
-                                    <button class="rounded-0 text-uppercase bag" type="submit">Edit Combination</button>
-                                </div>
-                            </form>    
                     </form>
+                    <div class="col-12 col-md-6 mt-3">
+                        <form action="" method="POST" class="form mb-2" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form | crispy}}
+                            <div class="text-right">
+                                <a href="{% url 'products' %}" class="btn rounded-0 text-uppercase">Cancel</a>
+                                <button class="rounded-0 text-uppercase bag" type="submit">Edit Combination</button>
+                            </div>
+                        </form> 
+                    </div>   
                </div>
             </div>
         </div>

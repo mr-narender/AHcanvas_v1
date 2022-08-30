@@ -154,22 +154,35 @@ def add_combination(request):
     return render(request, template, context)
 
 
-def get_combination(request):
+def combinations(request):
     """ A view to get all the combinations """
 
     combinations = Combination.objects.all()
-    form = CombinationForm()
 
     context = {
         'combinations': combinations,
     }
-
+    print(context)
     return render(request, 'products/get_combination.html', context)
 
 
-def edit_product(request, product_id):
+def combination_details(request, combination_id):
+    """ A view to get a combination """
+    combination = get_object_or_404(Combination, pk=combination_id)
+    combination_id = request.get('combination_pk')
+
+    context = {
+        'combination': combination,
+        'combination_id': combination_id,
+    }
+
+    print(context)
+    return render(request, 'products/get_combination.html', context)
+
+
+def edit_combination(request, combination_id):
     """ Edit a product in the store """
-    combination = get_object_or_404(Combination, pk=product_id)
+    combination = get_object_or_404(Combination, pk=combination_id)
     if request.method == 'POST':
         form = CombinationForm(
             request.POST, request.FILES, instance=combination)
