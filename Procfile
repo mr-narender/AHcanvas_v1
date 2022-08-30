@@ -1,1 +1,1 @@
-web: gunicorn ahcanvas.wsgi:application
+web: gunicorn ahcanvas_v1.wsgi:application
