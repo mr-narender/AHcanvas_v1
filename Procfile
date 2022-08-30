@@ -1,1 +1,1 @@
-web: gunicorn ahcanvas.wsgi:application --log-file - --log-level debug
+web: gunicorn ahcanvas.wsgi:application --log-file -
