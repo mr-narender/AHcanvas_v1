@@ -100,7 +100,6 @@ def product_detail(request, product_sku):
         "pk": product_combination[0].pk,
     }
 
-    print(context)
     return render(request, "products/product_detail.html", context)
 
 
@@ -162,33 +161,19 @@ def combinations(request):
     context = {
         'combinations': combinations,
     }
-    print(context)
-    return render(request, 'products/get_combination.html', context)
+
+    return render(request, 'products/combinations.html', context)
 
 
-def combination_details(request, combination_id):
-    """ A view to get a combination """
-    combination = get_object_or_404(Combination, pk=combination_id)
-    combination_id = request.get('combination_pk')
-
-    context = {
-        'combination': combination,
-        'combination_id': combination_id,
-    }
-
-    print(context)
-    return render(request, 'products/get_combination.html', context)
-
-
-def edit_combination(request, combination_id):
+def edit_combination(request, combination_pk):
     """ Edit a product in the store """
-    combination = get_object_or_404(Combination, pk=combination_id)
+    combination = get_object_or_404(Combination, pk=combination_pk)
     if request.method == 'POST':
         form = CombinationForm(
             request.POST, request.FILES, instance=combination)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully updated product!')
+            messages.success(request, 'Successfully updated combination!')
             return redirect(reverse('combinations'))
         else:
             messages.error(
@@ -196,9 +181,11 @@ def edit_combination(request, combination_id):
                 'Failed to update product. Please ensure the form is valid.')
     else:
         form = ProductForm(instance=combination)
-        messages.info(request, f'You are editing {combination.name}')
+        messages.info(
+            request,
+            f'You are editing {combination.name - combination.option}')
 
-    template = 'products/get_combination.html'
+    template = 'products/edit_combination.html'
     context = {
         'form': form,
         'combination': combination,

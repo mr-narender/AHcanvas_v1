@@ -17,8 +17,8 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <hr>
-                <h2 class="logo-font mb-4">Product Management</h2>
-                <h5 class="text-muted">Edit a Product</h5>
+                <h2 class="logo-font mb-4">Combination Management</h2>
+                <h5 class="text-muted">Edit a Combination</h5>
                 <hr>
             </div>
         </div>
@@ -26,32 +26,21 @@
         <div class="row">
             <div class="col">
                <div class="combination-selecter">
-                    <form class="combination-details">
+                    <form class="combination-selecter">
                         <div class="row">
                             <label class="dropdown">Select a Combination: </label> 
                                 <select name="combination_details" id="combination_details">
                                     {% for combination in combinations %}               
                                         <option value="{{ combination.pk }}" data-product_id="{{ combination.pk }}" id="{{ combination.pk }}">{{ combination.name }} - {{ combination.option }}</option>
+                                        <a href="{% url 'edit_combination' combination.pk %}" class="btn rounded-0 btn-lg">
+                                            <span class="text-uppercase">Select Combination</span>
+                                        </a>
                                     {% endfor %}
                                 </select>
                             </label>
-                            <div class="text-right">
-                                <button class="rounded-0 text-uppercase bag" type="submit">Get Combination</button>
-                            </div>
                         </div>
                     </form>
-                    <div class="col-12 col-md-6 mt-3">
-                        <form action="" method="POST" class="form mb-2" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            {{ form | crispy}}
-                            <div class="text-right">
-                                <a href="{% url 'products' %}" class="btn rounded-0 text-uppercase">Cancel</a>
-                                <button class="rounded-0 text-uppercase bag" type="submit">Edit Combination</button>
-                            </div>
-                        </form> 
-                    </div>   
-               </div>
+                </div>
             </div>
         </div>
-    </div>
 {% endblock %}

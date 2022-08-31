@@ -193,7 +193,7 @@ if os.environ.get('USE_AWS'):
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 else:
     STATIC_URL = '/static/'
-    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") # collect static collects here
+    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")  # collect static collects here
     MEDIA_URL = "/media/"
     MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 STATICFILES_DIRS = (
