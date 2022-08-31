@@ -32,9 +32,11 @@
                                 <select name="combination_details" id="combination_details">
                                     {% for combination in combinations %}               
                                         <option value="{{ combination.pk }}" data-product_id="{{ combination.pk }}" id="{{ combination.pk }}">{{ combination.name }} - {{ combination.option }}</option>
-                                        <a href="{% url 'edit_combination' combination.pk %}" class="btn rounded-0 btn-lg">
-                                            <span class="text-uppercase">Select Combination</span>
-                                        </a>
+                                        <button>
+                                            <a href="{% url 'edit_combination' combination.pk %}" class="btn rounded-0 btn-lg">
+                                                <span class="text-uppercase">Select Combination</span>
+                                            </a>
+                                        </button>
                                     {% endfor %}
                                 </select>
                             </label>
