@@ -167,6 +167,7 @@ def combinations(request):
 
 def edit_combination(request, combination_pk):
     """ Edit a product in the store """
+    print('start of edit combonation')
     combination = get_object_or_404(Combination, pk=combination_pk)
     if request.method == 'POST':
         form = CombinationForm(
@@ -180,10 +181,10 @@ def edit_combination(request, combination_pk):
                 request,
                 'Failed to update product. Please ensure the form is valid.')
     else:
-        form = ProductForm(instance=combination)
+        form = CombinationForm(instance=combination)
         messages.info(
             request,
-            f'You are editing {combination.name - combination.option}')
+            f'You are editing {combination.name} - {combination.option}')
 
     template = 'products/edit_combination.html'
     context = {

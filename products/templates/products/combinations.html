@@ -26,23 +26,43 @@
         <div class="row">
             <div class="col">
                <div class="combination-selecter">
-                    <form class="combination-selecter">
+                    <form class="combination-selecter" id="form" method="GET" action="">
+                        {% csrf_token %}
                         <div class="row">
                             <label class="dropdown">Select a Combination: </label> 
-                                <select name="combination_details" id="combination_details">
+                                <select name="combination_details" id="select">
                                     {% for combination in combinations %}               
-                                        <option value="{{ combination.pk }}" data-product_id="{{ combination.pk }}" id="{{ combination.pk }}">{{ combination.name }} - {{ combination.option }}</option>
-                                        <button>
-                                            <a href="{% url 'edit_combination' combination.pk %}" class="btn rounded-0 btn-lg">
-                                                <span class="text-uppercase">Select Combination</span>
-                                            </a>
-                                        </button>
+                                        <option value="{{ combination.pk }}" data-product_id="{{ combination.pk }}" id="{{ combination.pk }}">
+                                            {{ combination.name|normalize_title:'-' }} - {{ combination.option }}
+                                        </option>
                                     {% endfor %}
                                 </select>
+                                <button type="submit" id="submit-btn" class="rounded-0 text-uppercase bag">Get Combination</button>
                             </label>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+    <script type="text/javascript">
+        let submitButton = document.getElementById('submit-btn');
+        let select = document.getElementById('select');
+        let form = document.getElementById('form');
+        
+        // Event listeners
+        submitButton.addEventListener('click', formSubmit);
+
+        function formSubmit(event) {
+            event.preventDefault()
+            let url = '/products/combinations/'
+            let pk = select.value
+            form.action = url + pk;
+            form.submit()
+        }
+    </script>
 {% endblock %}
