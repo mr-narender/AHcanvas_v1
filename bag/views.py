@@ -64,11 +64,13 @@ def adjust_bag(request, item_id):
         if quantity > 0:
             bag[f"{combination.id}"] = quantity
             messages.success(
-                request, f"Updated {combination.name} quantity to {bag[item_id]}"
+                request,
+                f"Updated {combination.name} quantity to {bag[item_id]}"
             )
         else:
             bag.pop(f"{combination.id}")
-            messages.success(request, f"Removed {combination.name} from your bag")
+            messages.success(
+                request, f"Removed {combination.name} from your bag")
 
     request.session["bag"] = bag
     return redirect(reverse("view_bag"))

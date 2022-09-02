@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from products.models import Category, Combination, Product, ProductPrice, ProductType
+from products.models import Category, Combination, Product
+from products.models import ProductPrice, ProductType
 
 # Register your models here.
 

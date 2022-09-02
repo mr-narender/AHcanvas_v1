@@ -11,7 +11,6 @@ from profiles.models import UserProfile
 from .models import Order, OrderLineItem
 
 
-
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
 
@@ -142,4 +141,5 @@ class StripeWH_Handler:
         """
         Handle the payment_intent.payment_failed webhook from Stripe
         """
-        return HttpResponse(content=f'Webhook received: {event["type"]}', status=200)
+        return HttpResponse(
+            content=f'Webhook received: {event["type"]}', status=200)
