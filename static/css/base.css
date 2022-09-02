@@ -51,6 +51,14 @@ a:hover {
     text-decoration: none;
 }
 
+.footer-link:hover {
+    background-color: #000;
+}
+
+.justify-content-evenly {
+    justify-content: space-evenly!important;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -264,6 +272,43 @@ ul.pagination > li {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+/* -------------------------------- footer */
+
+/* footer styling */
+footer {
+    background: var(--primary);
+    color: var(--primary-text);
+}
+
+.social-channels {
+    padding-left: 0;
+    max-width: 600px;
+}
+
+.social-icons {
+    font-size: 2.5rem;
+    text-align: center;
+    list-style-type: none;
+    width: 20%;
+}
+
+.social-icons > a{
+    color: var(--primary-text);
+}
+
+.social-icons > a:hover{
+    border-bottom: .1rem solid var(--primary-hover-text);
+    background-color: #000;
+}
+
+.copyright {
+    text-align: center;
+}
+
+.indicates-required {
+    font-size: xx-small;
 }
 
 /* -------------------------------- Media Queries */
