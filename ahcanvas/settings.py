@@ -22,15 +22,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', 'g-x8ts_kr0tl5jl)jmmft80-+0aj&p*w&=49sobxd&5(!wi)r=')
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = 'DEVELOPMENT' in os.environ
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
+# DEBUG = True
 
 
 ALLOWED_HOSTS = ['ahcanvas.herokuapp.com', 'localhost']
-CSRF_TRUSTED_ORIGINS = ["https://ahcanavas.heroku.com", "https://8000-ak2489-ahcanvasv1-04lg26qjcrd.ws-eu63.gitpod.io"]
+CSRF_TRUSTED_ORIGINS = ["https://ahcanavas.heroku.com", "localhost"]
 
 
 # Application definition

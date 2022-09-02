@@ -1,5 +1,5 @@
 #id_default_country,
-#id_default_country option:not(:first-child) {
+#id_default_country option:not:first-child {
     color: black;
 }
 

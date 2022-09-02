@@ -3,7 +3,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from django.shortcuts import get_object_or_404, redirect, render, reverse
 
-from products.models import Category, Combination, Product
+from products.models import Combination, Product
 from .forms import ProductForm, CombinationForm
 from products.utils import paginateProducts
 
