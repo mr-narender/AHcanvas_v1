@@ -30,7 +30,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 
 ALLOWED_HOSTS = ['ahcanvas.herokuapp.com', 'localhost']
-CSRF_TRUSTED_ORIGINS = ["https://ahcanavas.heroku.com", "localhost"]
+# CSRF_TRUSTED_ORIGINS = ["https://ahcanavas.heroku.com", "https://8000-ak2489-ahcanvasv1-04lg26qjcrd.ws-eu63.gitpod.io"]
 
 
 # Application definition
@@ -216,9 +216,9 @@ STRIPE_WH_SECRET = os.getenv("STRIPE_WH_SECRET", "")
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-    DEFAULT_FROM_EMAIL = "a-hcanvas@example.com"
+    DEFAULT_FROM_EMAIL = "ak2489.code@gmail.com"
 else:
-    EMAIL_BACKEND = 'django.core.mail.backends.smpt.EmailBackend'
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
     EMAIL_PORT = 587
     EMAIL_HOST = 'smpt.gmail.com'
