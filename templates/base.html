@@ -67,7 +67,7 @@
         <div class="col-12 col-lg-4 my-auto py1 py-lg-0">
           <ul class="list-inline list-unstyled text-center text-lg-right my-0">
             <li class="list-inline-item dropdown">
-              <a href="#" class="text-black nav-link m-0" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="False">
+              <a href="#" class="text-black nav-link m-0" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="text-center fa-icon">
                   <div><i class="fas fa-user fa-lg"></i></div>
                   <p class="my-0">My Account</p>
@@ -151,8 +151,8 @@
 
     {% block postloadjs %}
         <!--Mailchimp-->
-    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-    <script type="text/javascript">
+    <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script>
         (function ($) {
             window.fnames = new Array();
             window.ftypes = new Array();
@@ -172,7 +172,7 @@
         var $mcj = jQuery.noConflict(true);
     </script>
 
-    <script type="text/javascript">
+    <script>
       $('.toast').toast('show');
     </script>
     {% endblock %}

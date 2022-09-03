@@ -131,15 +131,15 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript">
+    <script>
         $('.btt-link').click(function(e) {
-            window.scrollTo(0,0)
-        })
+            window.scrollTo(0,0);
+        });
     </script>
 
-    <script type="text/javascript">
-        const searchForm = document.getElementById('search-form')
-        const pageBtns = document.getElementsByClassName('page-btn')
+    <script>
+        const searchForm = document.getElementById('search-form');
+        const pageBtns = document.getElementsByClassName('page-btn');
         if (searchForm) {
             for (let i = 0; i < pageBtns.length; i++) {
                 pageBtns[i].addEventListener('click', function(e){
@@ -152,11 +152,11 @@
                         let start = current.slice(0, cut);
                         let newUrl = start;
                         if (end > 0) {
-                            let urlEnd = current.slice(end)
-                            newUrl += urlEnd
+                            let urlEnd = current.slice(end);
+                            newUrl += urlEnd;
                         }
-                        newUrl += `&page=${page}`
-                        window.location.href = newUrl
+                        newUrl += `&page=${page}`;
+                        window.location.href = newUrl;
                     }else {
                         let cut = current.indexOf('page=');
                         if (cut > 0) {
@@ -164,11 +164,11 @@
                             let start = current.slice(0, cut);
                             let newUrl = start;
                             if (end > 0) {
-                                let urlEnd = current.slice(end)
-                                newUrl += urlEnd
+                                let urlEnd = current.slice(end);
+                                newUrl += urlEnd;
                             }
-                            newUrl += `&page=${page}`
-                            window.location.href = newUrl
+                            newUrl += `&page=${page}`;
+                            window.location.href = newUrl;
                         }else {
                             if (current.indexOf('?') > 0) {
                                 window.location.href = current+`&page=${page}`;
@@ -199,6 +199,6 @@
 
                 window.location.replace(currentUrl);
             }
-        })
+        });
     </script>
 {% endblock %}

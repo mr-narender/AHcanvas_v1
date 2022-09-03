@@ -100,8 +100,8 @@
                                     <label class="radio">
                                         <input type="hidden" name="sku" value="{{ product.sku }}" />
                                         <input type="radio" name="product_types" value="{{ product.option.product_type }}" data-item_id="{{ product.option.pk }}" id="{{ product.option.pk }}">
+                                            <span class="price">£{{ product.option.product_price }}</span>
                                             <img src="{{ product.option.type_image.url }}" alt="buying-size">
-                                            <p class="price">£{{ product.option.product_price }}</p>
                                     </label>
                                 {% endfor %}
                             <div class="col-12 mb-3">

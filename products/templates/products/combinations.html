@@ -49,7 +49,7 @@
 
 {% block postloadjs %}
 {{ block.super }}
-    <script type="text/javascript">
+    <script>
         let submitButton = document.getElementById('submit-btn');
         let select = document.getElementById('select');
         let form = document.getElementById('form');
@@ -58,11 +58,11 @@
         submitButton.addEventListener('click', formSubmit);
 
         function formSubmit(event) {
-            event.preventDefault()
+            event.preventDefault();
             let url = '/products/combinations/'
-            let pk = select.value
+            let pk = select.value;
             form.action = url + pk;
-            form.submit()
+            form.submit();
         }
     </script>
 {% endblock %}
