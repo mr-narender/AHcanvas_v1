@@ -1,0 +1,7 @@
+
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Disallow: /admin/
+Disallow: /profiles/
+Sitemap: https://ahcanvas.herokuapp.com/sitemap.xml
