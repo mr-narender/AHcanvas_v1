@@ -95,7 +95,7 @@ The main foundation for the sites SEO strategy was to provide a platform for the
 ### Social Media Marketing
 For the purposes of the assessment a Facebook page was created for the company. As a key foundation for any ecommerce website's marketing strategy social media would form a key part of the businesses marketing strategy. The page included links to the main website to drive traffic from the social network to the site. Content for this page will include post about where new photos will be taken.
 
-<p align='center'><img src=''></p>
+<p align='center'><img src='media/README_MEDIA/social-media.PNG'></p>
 
 ### Testing 
 
