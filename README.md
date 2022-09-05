@@ -40,7 +40,7 @@ The site provides role based permissions for users to interact with a central da
 
 ### Entity relationship Diagram
 
-<p align='center'><img src='media/README_MEDIA/Entity-Relationship.jpg'></p>
+<p align='center'><img src='media/README_MEDIA/Entity-Relaionhip.JPG'></p>
 
 ### Databases 
 
@@ -101,7 +101,11 @@ For the purposes of the assessment a Facebook page was created for the company. 
 
 I utilised a manual testing strategy for the development of the site. A full detailed breakdown of the testing procedures can be found in the TESTING.md file [here](/workspace/AHcanvas_v1/TESTING.md). Seperate to the functionality testing of the site, and the testing of the code, User Story tests were implemented to ensure that the acceptance criteria of the user stories listed above were met.
 
-#### Further testing
+#### User Story Testing 
+
+<p align='center'><img src=''></p>
+
+#### Further Testing
 - The website was tested on Google Chrome, Microsoft Edge and Safari browsers.
 - The website was viewed on a variety of devices such as desktop, laptop, Android phones, iPhones and Andriod tablets.
 - A large amount of testing was done to ensure that all pages were linking correctly.
