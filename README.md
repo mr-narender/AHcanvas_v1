@@ -9,7 +9,7 @@ A&H Canvas is a website built on Django using Python, JavaScript, HTML and CSS. 
 
 The site provides role based permissions for users to interact with a central dataset. It includes user authentication, email validation, Full CRUD functionality for approved users for editing, adding and deleting Products and Combinations.
 
-<h2 align='center'><img src='responsive'></h2>
+<h2 align='center'><img src='media/README_MEDIA/responsive.jpg'></h2>
 
 [View the live project here.](https://www.ahcanvas.heroku.com/)
 
@@ -74,17 +74,17 @@ The site provides role based permissions for users to interact with a central da
 
 - Research was conducted to discover the appropiate keywords to utilise given the target markets and product range. This research was based on Google's SEO tools which provides details of common search terms users are search for and allows you to seach these terms by target market. The UK and USA markets were used for example purposes.
 
-<p align='center'><img src=''>Keyword search 'Landscape Photography' - UK<p>
+<p align='center'><img src='media/README_MEDIA/keyword-landscape-photography-uk.PNG'>Keyword search 'Landscape Photography' - UK<p>
 
-<p align='center'><img src=''>Keyword search 'Landscape Photography' - USA<p>
+<p align='center'><img src='media/README_MEDIA/keyword-landscape-photography-us.PNG'>Keyword search 'Landscape Photography' - USA<p>
 
-<p align='center'><img src=''>Keyword search 'Canvas Print' - UK<p>
+<p align='center'><img src='media/README_MEDIA/keyword-canvas-prints-uk.PNG'>Keyword search 'Canvas Print' - UK<p>
 
-<p align='center'><img src=''>Keyword search 'Canvas Print' - USA<p>
+<p align='center'><img src='media/README_MEDIA/keyword-canvas-prints-us.PNG'>Keyword search 'Canvas Print' - USA<p>
 
-<p align='center'><img src=''>Keyword search 'Wall Art' - UK<p>
+<p align='center'><img src='media/README_MEDIA/keyword-search-wall-art-us.jpg'>Keyword search 'Wall Art' - UK<p>
 
-<p align='center'><img src=''>Keyword search 'Wall Art' - USA<p>
+<p align='center'><img src='media/README_MEDIA/keyword-search-wall-art-uk.jpg'>Keyword search 'Wall Art' - USA<p>
 
 - From this research a refined keyword list was cultivated for use with the short-tail keywords within the head meta tags and for content through out the site. However this only formed a small part of the overall strategy for the sites SEO strategy.
 
