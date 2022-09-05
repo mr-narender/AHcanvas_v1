@@ -147,6 +147,20 @@ When the user has selected the quantity and buying option it can be added to the
 <p align='center'><img src='media/README_MEDIA/bag-icon.JPG'></p>
 <p align='center'><img src='media/README_MEDIA/bag.JPG'></p>
 
+#### Checkout
+The checkout split into to parts the first is a simple form that allows users to enter their details, delivery information and payment information. The second is an order summary including the product price and then an order total for if you have more than one of the same product.
+<p align='center'><img src='media/README_MEDIA/checkout.JPG'></p>
+
+#### Checkout Success
+When users have successfully processed their payment, they are taken to the order confirmation page which provides the user with a summary of the information their order contains. This page also provides the user with their order number.
+<p align='center'><img src='media/README_MEDIA/order-summary.JPG'></p>
+
+#### Order  Summary
+At the same time as the user is redirected to the order confirmation page, an email is sent to the email address they provided during the checkout process. This email provides the user with the same details as the order confirmation page, with the full address details summarised as the town and country only.
+<p align='center'><img src=''></p>
+
+
+
 
 
 
