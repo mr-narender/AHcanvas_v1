@@ -57,20 +57,17 @@ The site provides role based permissions for users to interact with a central da
 
 <p align='center'><img src='media/README_MEDIA/product-details-wireframe.jpg'></p>
 
-#### Colour Scheme
+### Colour Scheme
 
 - With a lot of the photography centering around landscapes and nature I wanted to keep the colour scheme as simple as possible to let the photographs do the talking on the page. 
 - The choice of Green and White was used to promote the nature aspect of the photographs and give them a clear chance to shine through on the page.
 
-#### Typography 
+### Typography 
 
 - Lato was used for the main font throughout the site as it is clear and easy to read. 
 - Kanit was used as the more stylised font for the heading.
 
-#### Features
-
-
-#### Key Word Research
+### Key Word Research
 
 - Research was conducted to discover the appropiate keywords to utilise given the target markets and product range. This research was based on Google's SEO tools which provides details of common search terms users are search for and allows you to seach these terms by target market. The UK and USA markets were used for example purposes.
 
@@ -88,7 +85,7 @@ The site provides role based permissions for users to interact with a central da
 
 - From this research a refined keyword list was cultivated for use with the short-tail keywords within the head meta tags and for content through out the site. However this only formed a small part of the overall strategy for the sites SEO strategy.
 
-##### Content Strategy 
+### Content Strategy 
 
 The main foundation for the sites SEO strategy was to provide a platform for the company from which they can provide users with informative and relevant information. Product pages were designed to include more details that the average product page - which enables the company to configure the descriptions in a manner that maximises the SEO value.
 
@@ -101,23 +98,59 @@ For the purposes of the assessment a Facebook page was created for the company. 
 
 I utilised a manual testing strategy for the development of the site. A full detailed breakdown of the testing procedures can be found in the TESTING.md file [here](/workspace/AHcanvas_v1/TESTING.md). Seperate to the functionality testing of the site, and the testing of the code, User Story tests were implemented to ensure that the acceptance criteria of the user stories listed above were met.
 
-#### User Story Testing 
+### User Story Testing 
 
 <p align='center'><img src=''></p>
 
-#### Further Testing
+### Further Testing
 - The website was tested on Google Chrome, Microsoft Edge and Safari browsers.
 - The website was viewed on a variety of devices such as desktop, laptop, Android phones, iPhones and Andriod tablets.
 - A large amount of testing was done to ensure that all pages were linking correctly.
 - Friend, Family and Peers were asked to review the site and point out any bugs and/or user experience issues
 
-#### Lighhouse Testing 
+### Lighhouse Testing 
 
 <p align='center'><img src=''></p>
 
-#### Project Bugs and Solutions
+## Project Bugs and Solutions
 
-### Technologies Used
+## Features
+### Navigation
+The main navigation is split into three sections. The first section contains the main navigation for the sites main sections of interest. The second section contains the links for user account management or employee site management. The third is the search bar that lets the user search keywords on the site.
+<p align='center'><img src='media/README_MEDIA/nav-bar.JPG'></p>
+<p align='center'><img src='media/README_MEDIA/nav-bar-responsive.JPG'></p>
+
+#### Footer
+There are also navigation links within the footer from which users can access areas of the site and social media links. Also included in the footer is a newsletter sign up to a mailchimp controlled email database. The mailchimp supplied sign up form was styled to match the remainder of the site. 
+<p align='center'><img src='media/README_MEDIA/footer.JPG'></p>
+<p align='center'><img src='media/README_MEDIA/footer-responsive.JPG'></p>
+
+#### Homepage
+The homepage greets users with a welcome message over one of the photos that you can purchase. The clear links within the navigation bar indicate that the site is a shop and the shop now button is bold and easy to see. 
+<p align='center'><img src='media/README_MEDIA/home-page.JPG'></p>
+<p align='center'><img src='media/README_MEDIA/home-page-responsive.JPG'></p>
+
+#### All Products
+The all products page displays a a card featuring the image and title with the price and rating of the product. The page is made up of 12 products, pagination was utilised to create multiple pages of the full list of products. There is also a return to top button so the user can get back to the sort selector at the top. The sort selector give the user the option to rearrange the products are displayed based on name, rating, category and colour.
+<p align='center'><img src='media/README_MEDIA/all-products.JPG'></p>
+<p align='center'><img src='media/README_MEDIA/all-products-responsive.JPG'></p>
+<p align='center'><img src='media/README_MEDIA/display-card.JPG'></p>
+
+#### Product Details
+The products details page has a header and a larger version of the image from the card and if clicked the imge opens up full size in a new browser window. Along with this there are two main sections to this page. The product information which holds the description, name, rating and category. The category is a clickable link that will filter all product of the same category. The second section is the buying opions where you can select the quantity that you would like to purchase and in what buying option you would like. 
+<p align='center'><img src='media/README_MEDIA/product-details.JPG'></p>
+<p align='center'><img src='media/README_MEDIA/product-info.JPG'></p>
+<p align='center'><img src='media/README_MEDIA/buying-options.JPG'></p>
+
+#### Bag
+When the user has selected the quantity and buying option it can be added to the bag. The bag is displayed in the nav bar. When adding items to the bag a message will appear with a summary of the bag information including the name, image, buying option, quantity and price. This pop up can be cleared to continue shopping with the 'x' or can be used to got to the checkout. If  the user selects the bag icon this will take the user to their bag. The bag has the same layout to the message pop up with the same information included. Here the user can adjust the quantity of the items in the bag and remove items if they want. 
+<p align='center'><img src='media/README_MEDIA/bag-icon.JPG'></p>
+<p align='center'><img src='media/README_MEDIA/bag.JPG'></p>
+
+
+
+
+## Technologies Used
  - Python
     - The following Python modules were used on this project:
         - asgiref==3.5.2
