@@ -34,7 +34,7 @@ The site provides role based permissions for users to interact with a central da
 
 ### User Stories
 
-<p align='center'><img src='media/README_MEDIA/User-Stories.jpg'>
+<p align='center'><img src='media/README_MEDIA/user-stories.JPG'>
 
 ## Functional Scope
 
@@ -100,7 +100,7 @@ I utilised a manual testing strategy for the development of the site. A full det
 
 ### User Story Testing 
 
-<p align='center'><img src=''></p>
+<p align='center'><img src='media/README_MEDIA/user-story-tests.JPG'></p>
 
 ### Further Testing
 - The website was tested on Google Chrome, Microsoft Edge and Safari browsers.
@@ -114,11 +114,25 @@ I utilised a manual testing strategy for the development of the site. A full det
 
 ## Project Bugs and Solutions
 
+- Toast messages not showing correctly. - The toast messages were poping up but none of the content in the message was showing up. - I had a typo in the code where it said {% for messages in messages %} which needed to be message.
+
+- Images not showing - The images I had uploaded were not showing on the site - Some of the images are saved as a .JPG file but the database was looking for a .jpg fike and would not find the images. To solve this I used the search replace feature on my json file to correct the way the files were saved. 
+
+- Products names showing with '-' between words - Because the product names were taken off what the image was saved as all the names had a '-' between the words - To fix this I used the Python function normalize_title where i told the server to remove any '-' from the titles. 
+
+-  Confirmation emails not sending upon purchase - I had not set up my env.py file correctly and needed to add all of my secret keys from heroku.
+
+
 ## Features
 ### Navigation
 The main navigation is split into three sections. The first section contains the main navigation for the sites main sections of interest. The second section contains the links for user account management or employee site management. The third is the search bar that lets the user search keywords on the site.
 <p align='center'><img src='media/README_MEDIA/nav-bar.JPG'></p>
 <p align='center'><img src='media/README_MEDIA/nav-bar-responsive.JPG'></p>
+Each one of the navigation titles opens it own drop down that will arrange and filter the product depending on which option is selected. 
+<p align='center'><img src='media/README_MEDIA/all-products-dropdown.JPG'>
+<img src='media/README_MEDIA/categories-dropdown.JPG'>
+<img src='media/README_MEDIA/colour-dropdown.JPG'>
+<img src='media/README_MEDIA/size-dropdown.JPG'></p>
 
 #### Footer
 There are also navigation links within the footer from which users can access areas of the site and social media links. Also included in the footer is a newsletter sign up to a mailchimp controlled email database. The mailchimp supplied sign up form was styled to match the remainder of the site. 
@@ -133,8 +147,8 @@ The homepage greets users with a welcome message over one of the photos that you
 #### All Products
 The all products page displays a a card featuring the image and title with the price and rating of the product. The page is made up of 12 products, pagination was utilised to create multiple pages of the full list of products. There is also a return to top button so the user can get back to the sort selector at the top. The sort selector give the user the option to rearrange the products are displayed based on name, rating, category and colour.
 <p align='center'><img src='media/README_MEDIA/all-products.JPG'></p>
-<p align='center'><img src='media/README_MEDIA/all-products-responsive.JPG'></p>
-<p align='center'><img src='media/README_MEDIA/display-card.JPG'></p>
+<p align='center'><img src='media/README_MEDIA/all-products-responsive.JPG'>
+<img src='media/README_MEDIA/display-card.JPG'></p>
 
 #### Product Details
 The products details page has a header and a larger version of the image from the card and if clicked the imge opens up full size in a new browser window. Along with this there are two main sections to this page. The product information which holds the description, name, rating and category. The category is a clickable link that will filter all product of the same category. The second section is the buying opions where you can select the quantity that you would like to purchase and in what buying option you would like. 
@@ -159,9 +173,31 @@ When users have successfully processed their payment, they are taken to the orde
 At the same time as the user is redirected to the order confirmation page, an email is sent to the email address they provided during the checkout process. This email provides the user with the same details as the order confirmation page, with the full address details summarised as the town and country only.
 <p align='center'><img src=''></p>
 
+#### Order Status 
+Registered users can access the status of all previous orders through their profile page. Order history is shown to the right of the profile page with the left hand side showing the profile default delivery information.
+<p align='center'><img src='media/README_MEDIA/profile-order-history.JPG'></p>
+
+#### User Account Management
+Users can register for an account using the account icon in the nav bar. From there users will be taken to the sign up form that they will fill in. Upon clicking sign up the user will be taken sent a email to confirm their email address. After confirming their email address the user will then be able to log into their account and View their account details and order history.
+<p align='center'><img src='media/README_MEDIA/register.JPG'>
+<img src='media/README_MEDIA/sign-up-form.JPG'></p>
+<p align='center'><img src='media/README_MEDIA/confirm-email.JPG'></p>
+
+#### Site Owner Account Management
+As a site owner you can add and edit products/combinations from the site by using the account icon dropdown in the nav bar. Selecting each option takes the site owner to the relevent page. The add products/combinations has a form for the site owner to fill in to add all the information. The edit combinations takes users to the selector which is a drop down of all the combinations. Upon selecting the combination the page will load up the edit form with all the information filled in ready to edit. 
+<p align='center'><img src='media/README_MEDIA/site-owner.JPG'>
+<img src='media/README_MEDIA/add-product.JPG'></p>
+<p align='center'><img src='media/README_MEDIA/add-combination.JPG'>
+<img src='media/README_MEDIA/edit-combination.JPG'></p>
+<p align='center'><img src='media/README_MEDIA/edit-selector.JPG'></p>
 
 
-
+## Future Enhancements
+There are several items of functionality that I would like to add in the future.
+- A blog to update users on where new images will be coming from in the future. 
+- The ability to not see all the combination in the products list and just the individual products. 
+- The ability for a user to rate the product images.
+- Contact form for bookings as a photographer. 
 
 
 ## Technologies Used
@@ -229,11 +265,17 @@ At the same time as the user is redirected to the order confirmation page, an em
 - HTML 
     - HTML was used as the base language for the templates created for the site.
 
-### Deploymemt
+#### Resources Used
+
+- The Django documentation was used extensively during development of this project.
+- The Django AllAuth documentation was used as a reference and a guide for implementing the package and its features.
+- The Code Institute reference material was used as a general reference for things that I had previously done during the course.
+
+## Deploymemt
 
 The site was deployed via Heroku, and the live link can be found here - [A&H Canvas](https://www.ahcanvas.heroku.com/)
 
-#### Project Deployment
+### Project Deployment
 
 To deploy the project through Heroku I followed these steps:
 
