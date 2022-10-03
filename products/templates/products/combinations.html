@@ -12,7 +12,8 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
+<div class="overlay"></div>
+{% if user.is_superuser %}
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6">
@@ -45,6 +46,17 @@
             </div>
         </div>
     </div>
+    {% else %}
+        <div class="container-fluid">
+            <div class="text-center mt-3">
+                <h1 class="mb-0 mt-5 strong-text text-uppercase">Oops this page it not available</h1>
+                <h4 class="mb-0 strong-text text-uppercase">Use this link to go back to products</h4>
+                <a href="{% url 'products' %}">
+                    <button class="rounded-0 text-uppercase bag mt-3 mb-3">Products</button>
+                </a>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}
 
 {% block postloadjs %}
