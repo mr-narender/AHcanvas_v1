@@ -11,7 +11,7 @@ The site provides role based permissions for users to interact with a central da
 
 <h2 align='center'><img src='media/README_MEDIA/responsive.jpg'></h2>
 
-[View the live project here.](https://www.ahcanvas.heroku.com/)
+[View the live project here.](https://ahcanvas.herokuapp.com/)
 
 ## User Experiences (UX)
 
